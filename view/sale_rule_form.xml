@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- This file is part of sale_rule module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<form string="Sale Rule" col="4">
+    <label name="name"/>
+    <field name="name"/>
+    <group colspan="2" col="4" id="booleans">
+        <label name="active"/>
+        <field name="active"/>
+        <label name="stop_further"/>
+        <field name="stop_further"/>
+    </group>
+    <label name="from_date"/>
+    <field name="from_date"/>
+    <label name="to_date"/>
+    <field name="to_date"/>
+    <label name="shop"/>
+    <field name="shop"/>
+    <label name="category"/>
+    <field name="category"/>
+    <notebook colspan="6">
+        <page string="Conditions" id="conditions">
+            <label name="quantifier"/>
+            <field name="quantifier"/>
+            <field name="conditions" colspan="4"/>
+        </page>
+        <page string="Actions" id="actions">
+            <field name="actions" colspan="4"/>
+        </page>
+    </notebook>
+</form>

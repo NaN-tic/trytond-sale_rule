@@ -1,0 +1,340 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:sale.rule.action:"
+msgid "You cannot make this sale because of %s."
+msgstr "No puede realizar esta venta porque %s."
+
+msgctxt "field:sale.line,action:"
+msgid "Rule Action"
+msgstr "Acción de regla"
+
+msgctxt "field:sale.rule,actions:"
+msgid "Actions"
+msgstr "Acciones"
+
+msgctxt "field:sale.rule,active:"
+msgid "Active"
+msgstr "Activo"
+
+msgctxt "field:sale.rule,category:"
+msgid "Party Category"
+msgstr "Categoría de tercero"
+
+msgctxt "field:sale.rule,conditions:"
+msgid "Conditions"
+msgstr "Condiciones"
+
+msgctxt "field:sale.rule,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:sale.rule,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:sale.rule,from_date:"
+msgid "From Date"
+msgstr "Desde fecha"
+
+msgctxt "field:sale.rule,id:"
+msgid "ID"
+msgstr "Id"
+
+msgctxt "field:sale.rule,name:"
+msgid "Description"
+msgstr "Descripción"
+
+msgctxt "field:sale.rule,quantifier:"
+msgid "Quantifier"
+msgstr "Cuantificador"
+
+msgctxt "field:sale.rule,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:sale.rule,sequence:"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "field:sale.rule,shop:"
+msgid "Shop"
+msgstr "Tienda"
+
+msgctxt "field:sale.rule,stop_further:"
+msgid "Stop Checks"
+msgstr "Detiene las comprovaciones"
+
+msgctxt "field:sale.rule,to_date:"
+msgid "To Date"
+msgstr "A fecha"
+
+msgctxt "field:sale.rule,write_date:"
+msgid "Write Date"
+msgstr "Fecha actualización"
+
+msgctxt "field:sale.rule,write_uid:"
+msgid "Write User"
+msgstr "Usuario actualitzación"
+
+msgctxt "field:sale.rule.action,action_type:"
+msgid "Action"
+msgstr "Acción"
+
+msgctxt "field:sale.rule.action,comment:"
+msgid "Comment"
+msgstr "Comentario"
+
+msgctxt "field:sale.rule.action,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:sale.rule.action,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:sale.rule.action,currency_digits:"
+msgid "Currency Digits"
+msgstr "Decimales de moneda"
+
+msgctxt "field:sale.rule.action,id:"
+msgid "ID"
+msgstr "Id"
+
+msgctxt "field:sale.rule.action,product:"
+msgid "Product"
+msgstr "Producto"
+
+msgctxt "field:sale.rule.action,quantity:"
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgctxt "field:sale.rule.action,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:sale.rule.action,rule:"
+msgid "Rule"
+msgstr "Regla"
+
+msgctxt "field:sale.rule.action,sequence:"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "field:sale.rule.action,write_date:"
+msgid "Write Date"
+msgstr "Fecha actualización"
+
+msgctxt "field:sale.rule.action,write_uid:"
+msgid "Write User"
+msgstr "Usuario actualitzación"
+
+msgctxt "field:sale.rule.condition,category:"
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+msgctxt "field:sale.rule.condition,condition:"
+msgid "Condition"
+msgstr "Condición"
+
+msgctxt "field:sale.rule.condition,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:sale.rule.condition,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:sale.rule.condition,criteria:"
+msgid "Criteria"
+msgstr "Criterio"
+
+msgctxt "field:sale.rule.condition,currency_digits:"
+msgid "Currency Digits"
+msgstr "Decimales de moneda"
+
+msgctxt "field:sale.rule.condition,id:"
+msgid "ID"
+msgstr "Id"
+
+msgctxt "field:sale.rule.condition,product:"
+msgid "Product"
+msgstr "Producto"
+
+msgctxt "field:sale.rule.condition,quantity:"
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgctxt "field:sale.rule.condition,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:sale.rule.condition,rule:"
+msgid "Rule"
+msgstr "Regla"
+
+msgctxt "field:sale.rule.condition,sequence:"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "field:sale.rule.condition,stop_further:"
+msgid "Stop further checks"
+msgstr "Detiene resto de comprovaciones"
+
+msgctxt "field:sale.rule.condition,write_date:"
+msgid "Write Date"
+msgstr "Fecha actualización"
+
+msgctxt "field:sale.rule.condition,write_uid:"
+msgid "Write User"
+msgstr "Usuario actualitzación"
+
+msgctxt "help:sale.rule,quantifier:"
+msgid ""
+"\"All\" requires that all conditions are true to apply this rule.\n"
+"\"Any\" applies this rule if any of the conditions is true."
+msgstr ""
+"\"Todas\" exige que todas las condiciones sean ciertas para aplicar esta regla.\n"
+"\"Cualquiera\" aplica esta regla si cualquiera de las condiciones es cierta."
+
+msgctxt "help:sale.rule,stop_further:"
+msgid "Avoids that the rest of rules are checked if this rule is applicable."
+msgstr ""
+"Evita que se comprueben el resto de reglas si esta regla es aplicable."
+
+msgctxt "model:ir.action,name:act_sale_rule"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "model:ir.ui.menu,name:menu_sale_rule"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "model:sale.rule,name:"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "model:sale.rule.action,name:"
+msgid "Sale Rule Action"
+msgstr "Acción de regla de venta"
+
+msgctxt "model:sale.rule.condition,name:"
+msgid "Sale Rule Condition"
+msgstr "Condición de regla de venta"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "All"
+msgstr "Todas"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "Any"
+msgstr "Cualquiera"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Sub Total"
+msgstr "% de descuento en subtotal"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Fixed amount on Sub Total"
+msgstr "Importe fijo en subtotal"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Get X Product Free"
+msgstr "Obtenga X productos gratis"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Stop Sale"
+msgstr "Detiene venta"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "equals"
+msgstr "es igual a"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater or equal than"
+msgstr "mayor o igual que"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater than"
+msgstr "mayor que"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less or equal than"
+msgstr "menor o igual que"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less than"
+msgstr "menor que"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "multiple of"
+msgstr "múltiple de"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not equal to"
+msgstr "diferente de"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not multiple of"
+msgstr "no múltiple de"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Tax Amount"
+msgstr "Total de impuestos"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Amount"
+msgstr "Importe total"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Product Category Quantity"
+msgstr "Cantidad total de productos de categoría"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Product Quantity"
+msgstr "Cantidad total de productos"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Products"
+msgstr "Total de productos"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Untaxed Amount"
+msgstr "Importe sin impuestos"
+
+msgctxt "view:sale.rule.action:"
+msgid "Actions"
+msgstr "Acciones"
+
+msgctxt "view:sale.rule.action:"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Conditions"
+msgstr "Condiciones"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "view:sale.rule:"
+msgid "Actions"
+msgstr "Acciones"
+
+msgctxt "view:sale.rule:"
+msgid "Conditions"
+msgstr "Condiciones"
+
+msgctxt "view:sale.rule:"
+msgid "Sale Rule"
+msgstr "Regla de venta"
+
+msgctxt "view:sale.rule:"
+msgid "Sale Rules"
+msgstr "Reglas de venta"
+
+msgctxt "view:sale.sale:"
+msgid "Apply Rules"
+msgstr "Aplicar reglas"

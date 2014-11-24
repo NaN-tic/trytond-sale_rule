@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- This file is part of the sale_rule module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <!-- sale.sale -->
+        <record model="ir.ui.view" id="sale_view_form">
+            <field name="model">sale.sale</field>
+            <field name="inherit" ref="sale.sale_view_form"/>
+            <field name="name">sale_form</field>
+        </record>
+
+        <!-- sale.rule -->
+        <record model="ir.ui.view" id="sale_rule_tree_view">
+            <field name="model">sale.rule</field>
+            <field name="type">tree</field>
+            <field name="name">sale_rule_tree</field>
+        </record>
+        <record model="ir.ui.view" id="sale_rule_form_view">
+            <field name="model">sale.rule</field>
+            <field name="type">form</field>
+            <field name="name">sale_rule_form</field>
+        </record>
+        <record model="ir.action.act_window" id="act_sale_rule">
+            <field name="name">Sale Rule</field>
+            <field name="res_model">sale.rule</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_sale_rule_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="sale_rule_tree_view"/>
+            <field name="act_window" ref="act_sale_rule"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_sale_rule_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="sale_rule_form_view"/>
+            <field name="act_window" ref="act_sale_rule"/>
+        </record>
+        <menuitem
+            parent="sale.menu_configuration"
+            action="act_sale_rule"
+            id="menu_sale_rule" icon="tryton-list"/>
+
+        <!-- sale.rule.condition -->
+        <record model="ir.ui.view" id="sale_rule_condition_tree_view">
+            <field name="model">sale.rule.condition</field>
+            <field name="type">tree</field>
+            <field name="name">sale_rule_condition_tree</field>
+        </record>
+        <record model="ir.ui.view" id="sale_rule_condition_form_view">
+            <field name="model">sale.rule.condition</field>
+            <field name="type">form</field>
+            <field name="name">sale_rule_condition_form</field>
+        </record>
+
+        <!-- sale.rule.action -->
+        <record model="ir.ui.view" id="sale_rule_action_tree_view">
+            <field name="model">sale.rule.action</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="30"/>
+            <field name="name">sale_rule_action_tree</field>
+        </record>
+        <record model="ir.ui.view" id="sale_rule_action_form_view">
+            <field name="model">sale.rule.action</field>
+            <field name="type">form</field>
+            <field name="priority" eval="30"/>
+            <field name="name">sale_rule_action_form</field>
+        </record>
+    </data>
+</tryton>

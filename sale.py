@@ -115,12 +115,6 @@ class SaleRule(ModelView, ModelSQL):
     def default_quantifier():
         return 'all'
 
-    def count_coupon_use(self):
-        pass
-
-    def check_primary_conditions(self, sale):
-        pass
-
     def apply_actions(self, sale):
         for action in self.actions:
             action.apply(sale)

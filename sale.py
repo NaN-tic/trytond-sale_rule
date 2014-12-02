@@ -89,8 +89,8 @@ class SaleRule(ModelView, ModelSQL):
     from_date = fields.DateTime('From Date')
     to_date = fields.DateTime('To Date')
     sequence = fields.Integer('Sequence')
-    stop_further = fields.Boolean('Stop Checks', help='Avoids that the rest '
-        'of rules are checked if this rule is applicable.')
+    stop_further = fields.Boolean('Stop further checks', help='Avoids that '
+        'the rest of rules are checked if this rule is applicable.')
     shop = fields.Many2One('sale.shop', 'Shop')
     category = fields.Many2One('party.category', 'Party Category')
     actions = fields.One2Many('sale.rule.action', 'rule', 'Actions')

@@ -63,7 +63,7 @@ msgid "Shop"
 msgstr "Tienda"
 
 msgctxt "field:sale.rule,stop_further:"
-msgid "Stop Checks"
+msgid "Stop further checks"
 msgstr "Detiene las comprovaciones"
 
 msgctxt "field:sale.rule,to_date:"
@@ -157,6 +157,10 @@ msgstr "Decimales de moneda"
 msgctxt "field:sale.rule.condition,id:"
 msgid "ID"
 msgstr "Id"
+
+msgctxt "field:sale.rule.condition,manufacturer:"
+msgid "Manufacturer"
+msgstr "Fabricante"
 
 msgctxt "field:sale.rule.condition,product:"
 msgid "Product"

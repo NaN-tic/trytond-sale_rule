@@ -188,15 +188,21 @@ class SaleRuleAction(ModelSQL, ModelView):
                 return selection[1]
 
     def get_default_sale_line(self, sale):
-        return {
-            'sale': sale,
-            'type': 'line',
-            'quantity': 1,
-            'unit': self.product.template.default_uom,
-            'product': self.product,
-            'description': self.comment,
-            'action': self,
-            }
+        SaleLine = Pool().get('sale.line')
+
+        line = SaleLine()
+        line.sale = sale
+        line.unit = self.product.template.default_uom
+        line.quantity = 1
+        line.product = self.product
+        line.description = self.comment
+        line.party = sale.party
+        line.type = 'line'
+        line.sequence = 9999
+
+        for key, value in line.on_change_product().iteritems():
+            setattr(line, key, value)
+        return line
 
     def apply_stop_sale(self, sale):
         self.raise_user_error('sale_forbidden',
@@ -204,25 +210,24 @@ class SaleRuleAction(ModelSQL, ModelView):
             )
 
     def apply_cart_discount_percentage(self, sale):
-        sale_line = self.get_default_sale_line(sale)
-        sale_line['unit_price'] = -(sale.total_amount * self.quantity / 100)
-        return [sale_line]
+        line = self.get_default_sale_line(sale)
+        line.unit_price = -(sale.total_amount * self.quantity / 100)
+        return line
 
     def apply_cart_discoutn_fixed(self, sale):
-        sale_line = self.get_default_sale_line(sale)
-        sale_line['unit_price'] = -self.quantity
-        return [sale_line]
+        line = self.get_default_sale_line(sale)
+        line.unit_price = -self.quantity
+        return line
 
     def apply_get_product_free(self, sale):
-        sale_line = self.get_default_sale_line(sale)
-        sale_line['quantity'] = self.quantity
-        sale_line['unit_price'] = 0
-        return [sale_line]
+        line = self.get_default_sale_line(sale)
+        line.quantity = self.quantity
+        line.unit_price = 0
+        return line
 
     def apply(self, sale):
-        Line = Pool().get('sale.line')
-        vlist = getattr(self, 'apply_%s' % self.action_type)(sale)
-        Line.create(vlist)
+        line = getattr(self, 'apply_%s' % self.action_type)(sale)
+        line.save()
 
 
 class SaleRuleCondition(ModelSQL, ModelView):

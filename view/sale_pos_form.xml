@@ -3,8 +3,8 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <data>
-    <xpath expr="/form/group[@id='full_workflow_buttons']/button[@name='cancel']"
-            position="before">
+    <xpath expr="/form/group[@id='cash']/button[@name='wizard_sale_payment']"
+            position="after">
         <button name="apply_rules" string="Apply Rules"
             icon="tryton-star" colspan="2"/>
     </xpath>

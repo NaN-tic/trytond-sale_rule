@@ -3,6 +3,11 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <data>
+    <xpath expr="/form/notebook/page[@id=&quot;other&quot;]/field[@name=&quot;shipment_method&quot;]"
+            position="after">
+        <label name="add_rules"/>
+        <field name="add_rules"/>
+    </xpath>
     <xpath expr="/form/notebook/page/group/group/button[@name='cancel']"
             position="before">
         <button name="apply_rules" string="Apply Rules"

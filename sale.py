@@ -5,10 +5,12 @@ from datetime import datetime
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
+from trytond.transaction import Transaction
 
 __all__ = ['Sale', 'SaleRule', 'SaleRuleAction', 'SaleRuleCondition',
     'SaleLine']
 __metaclass__ = PoolMeta
+
 CRITERIA = [
     ('untaxed_amount', 'Untaxed Amount'),
     ('tax_amount', 'Tax Amount'),
@@ -37,15 +39,32 @@ ACTION_TYPES = [
 
 class Sale:
     __name__ = 'sale.sale'
+    add_rules = fields.Boolean('Add Rules', states={
+            'readonly': Eval('state') != 'draft',
+            }, depends=['state'],
+        help='Apply rules when change draft to quotation.')
 
     @classmethod
     def __setup__(cls):
         super(Sale, cls).__setup__()
         cls._buttons.update({
                 'apply_rules': {
-                    'invisible': Eval('state') != 'draft',
+                    'invisible': (
+                        (Eval('state') != 'draft') | (~Eval('add_rules', False))),
                     },
                 })
+
+    @staticmethod
+    def default_add_rules():
+        User = Pool().get('res.user')
+        user = User(Transaction().user)
+        return user.shop.apply_rules if user.shop else True
+
+    def on_change_shop(self):
+        res = super(Sale, self).on_change_shop()
+        if self.shop:
+            self.add_rules = self.shop.apply_rules
+        return res
 
     @classmethod
     def quote(cls, sales):
@@ -59,6 +78,8 @@ class Sale:
         Rule = pool.get('sale.rule')
         today = datetime.today()
         for sale in sales:
+            if not sale.add_rules:
+                continue
             rules = Rule.search([
                     ['OR',
                         ('from_date', '<=', today),

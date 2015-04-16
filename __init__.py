@@ -3,7 +3,7 @@
 # copyright notices and license terms.
 from trytond.pool import Pool
 from .sale import *
-
+from .shop import *
 
 def register():
     Pool.register(
@@ -12,4 +12,5 @@ def register():
         SaleRuleAction,
         SaleRuleCondition,
         SaleLine,
+        SaleShop,
         module='sale_rule', type_='model')

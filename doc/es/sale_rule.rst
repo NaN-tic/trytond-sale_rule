@@ -106,10 +106,25 @@ encuentra arriba a la derecha. Los campos a rellenar son los siguientes:
   * Comentario: El texto que se escriba en este campo será la descripción que
     aparezca en la nueva línea de venta.
 
+Tienda
+======
+
+En la tienda podemos configurar si se permite aplicar reglas en los pedidos de venta
+generados en esta tienda por defecto (valor por defecto en el pedido de venta).
+
 Funcionamiento
 ==============
 
-Cuando cree una nueva venta, verá un botón a la izquierda del botón cancelar
-que le permite aplicar la regla sin pasarla a estado presupuesto. Además,
-cuando la venta cambie de estado borrador a presupuesto se aplican todas las
-reglas que cumplan las condiciones.
+El usuario en la venta puede activar o desactivar la opción de "Añadir reglas" en el pedido
+de venta (por defecto estará activo o desactivo según la configuración de la tienda).
+
+El botón "Aplicar reglas" le permiten añadir el cálculo de reglas/promociones. En el caso que
+se encuentran reglas/promociones, se añadiran nuevas líneas con las promociones calculadas.
+Además, cuando la venta cambie de estado borrador a presupuesto se aplican todas las
+reglas que cumplan las condiciones (se borrarán las calculadas manualmente asignado
+las nuevas reglas (recalculo de las líneas)).
+
+En el caso que se desactive la opción del pedido de venta "Añadir reglas", el botón de
+"Aplicar reglas" quedará invisible y en el momento de cambiar de estado del pedido de
+borrador a presupuesto no se calcularán las reglas (en el caso que se han añadido con
+el botón y se deseativa).

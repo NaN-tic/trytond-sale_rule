@@ -158,10 +158,6 @@ msgctxt "field:sale.rule.condition,id:"
 msgid "ID"
 msgstr "Id"
 
-msgctxt "field:sale.rule.condition,manufacturer:"
-msgid "Manufacturer"
-msgstr "Fabricant"
-
 msgctxt "field:sale.rule.condition,product:"
 msgid "Product"
 msgstr "Producte"
@@ -194,6 +190,14 @@ msgctxt "field:sale.rule.condition,write_uid:"
 msgid "Write User"
 msgstr "Usuari actualizació"
 
+msgctxt "field:sale.sale,add_rules:"
+msgid "Add Rules"
+msgstr "Afegir regles"
+
+msgctxt "field:sale.shop,apply_rules:"
+msgid "Apply Rules"
+msgstr "Aplicar regles"
+
 msgctxt "help:sale.rule,quantifier:"
 msgid ""
 "\"All\" requires that all conditions are true to apply this rule.\n"
@@ -206,6 +210,16 @@ msgctxt "help:sale.rule,stop_further:"
 msgid "Avoids that the rest of rules are checked if this rule is applicable."
 msgstr ""
 "Evita que es comprovin la resta de regles si aquesta regla és aplicable."
+
+msgctxt "help:sale.sale,add_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr ""
+"Aplica regles en el moment que la comanda canvia de borrador a pressupost."
+
+msgctxt "help:sale.shop,apply_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr ""
+"Aplica regles en el moment que la comanda canvia de borrador a pressupost."
 
 msgctxt "model:ir.action,name:act_sale_rule"
 msgid "Sale Rule"

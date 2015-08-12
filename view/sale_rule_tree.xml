@@ -5,8 +5,10 @@ copyright notices and license terms. -->
 <tree string="Sale Rules" sequence="sequence">
     <field name="sequence"/>
     <field name="name"/>
-    <field name="from_date"/>
-    <field name="to_date"/>
+    <field name="from_date" widget="date"/>
+    <field name="from_date" widget="time" string="Time"/>
+    <field name="to_date" widget="date"/>
+    <field name="to_date" widget="time" string="Time"/>
     <field name="shop"/>
     <field name="stop_further"/>
     <field name="active"/>

@@ -61,10 +61,9 @@ class Sale:
         return user.shop.apply_rules if user.shop else True
 
     def on_change_shop(self):
-        res = super(Sale, self).on_change_shop()
+        super(Sale, self).on_change_shop()
         if self.shop:
             self.add_rules = self.shop.apply_rules
-        return res
 
     @classmethod
     def quote(cls, sales):
@@ -197,11 +196,9 @@ class SaleRuleAction(ModelSQL, ModelView):
 
     @fields.depends('rule')
     def on_change_action_type(self):
-        res = {}
         if self.rule:
-            res['currency_digits'] = (self.rule.shop
+            self.currency_digits = (self.rule.shop
                 and self.rule.shop.currency.digits or 2)
-        return res
 
     def get_rec_name(self, name):
         for selection in self._fields['action_type'].selection:
@@ -292,11 +289,9 @@ class SaleRuleCondition(ModelSQL, ModelView):
 
     @fields.depends('rule')
     def on_change_criteria(self):
-        res = {}
         if self.rule:
-            res['currency_digits'] = (self.rule.shop
+            self.currency_digits = (self.rule.shop
                 and self.rule.shop.currency.digits or 2)
-        return res
 
     @staticmethod
     def default_condition():

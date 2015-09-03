@@ -217,9 +217,7 @@ class SaleRuleAction(ModelSQL, ModelView):
         line.party = sale.party
         line.type = 'line'
         line.sequence = 9999
-
-        for key, value in line.on_change_product().iteritems():
-            setattr(line, key, value)
+        line.on_change_product()
         return line
 
     def apply_stop_sale(self, sale):

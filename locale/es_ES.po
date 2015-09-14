@@ -353,6 +353,10 @@ msgctxt "view:sale.rule:"
 msgid "Sale Rules"
 msgstr "Reglas de venta"
 
+msgctxt "view:sale.rule:"
+msgid "Time"
+msgstr "Hora"
+
 msgctxt "view:sale.sale:"
 msgid "Apply Rules"
 msgstr "Aplicar reglas"

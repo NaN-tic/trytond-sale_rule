@@ -9,7 +9,6 @@ from trytond.transaction import Transaction
 
 __all__ = ['Sale', 'SaleRule', 'SaleRuleAction', 'SaleRuleCondition',
     'SaleLine']
-__metaclass__ = PoolMeta
 
 CRITERIA = [
     ('untaxed_amount', 'Untaxed Amount'),
@@ -38,6 +37,7 @@ ACTION_TYPES = [
 
 
 class Sale:
+    __metaclass__ = PoolMeta
     __name__ = 'sale.sale'
     add_rules = fields.Boolean('Add Rules', states={
             'readonly': Eval('state') != 'draft',
@@ -367,5 +367,6 @@ class SaleRuleCondition(ModelSQL, ModelView):
 
 
 class SaleLine:
+    __metaclass__ = PoolMeta
     __name__ = 'sale.line'
     action = fields.Many2One('sale.rule.action', 'Rule Action')

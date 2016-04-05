@@ -177,9 +177,10 @@ class SaleRule(ModelView, ModelSQL):
         sales = Sale.search([
                 ('coupon', '=', self.coupon),
                 ])
-        if self.max_coupon < len(sales):
+        if self.max_coupon and self.max_coupon < len(sales):
             return False
-        if (self.max_party_coupon < len(
+        if (self.max_party_coupon
+            and self.max_party_coupon < len(
                 [s for s in sales if s.party == sale.party])):
             return False
         return True

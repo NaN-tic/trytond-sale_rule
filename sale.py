@@ -218,7 +218,7 @@ class SaleRuleAction(ModelSQL, ModelView):
             },
         digits=(16, Eval('currency_digits', 2)),
         depends=['currency_digits', 'action_type'])
-    comment = fields.Text('Comment', translate=True, required=True)
+    comment = fields.Text('Comment', translate=True)
 
     @classmethod
     def __setup__(cls):
@@ -251,7 +251,8 @@ class SaleRuleAction(ModelSQL, ModelView):
         line.unit = self.product.template.default_uom
         line.quantity = 1
         line.product = self.product
-        line.description = self.comment
+        if self.comment:
+            line.description = self.comment
         line.party = sale.party
         line.type = 'line'
         line.sequence = 9999

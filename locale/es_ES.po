@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -26,6 +26,10 @@ msgctxt "field:sale.rule,conditions:"
 msgid "Conditions"
 msgstr "Condiciones"
 
+msgctxt "field:sale.rule,coupon:"
+msgid "Coupon"
+msgstr "Cupón"
+
 msgctxt "field:sale.rule,create_date:"
 msgid "Create Date"
 msgstr "Fecha creación"
@@ -41,6 +45,14 @@ msgstr "Desde fecha"
 msgctxt "field:sale.rule,id:"
 msgid "ID"
 msgstr "Id"
+
+msgctxt "field:sale.rule,max_coupon:"
+msgid "Max Coupon"
+msgstr "Máximo cupones"
+
+msgctxt "field:sale.rule,max_party_coupon:"
+msgid "Max Coupon per Party"
+msgstr "Máximo cupones por tercero"
 
 msgctxt "field:sale.rule,name:"
 msgid "Description"
@@ -193,6 +205,10 @@ msgstr "Usuario actualitzación"
 msgctxt "field:sale.sale,add_rules:"
 msgid "Add Rules"
 msgstr "Añadir reglas"
+
+msgctxt "field:sale.sale,coupon:"
+msgid "Coupon"
+msgstr "Cupón"
 
 msgctxt "field:sale.shop,apply_rules:"
 msgid "Apply Rules"

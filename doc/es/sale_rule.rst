@@ -106,6 +106,25 @@ encuentra arriba a la derecha. Los campos a rellenar son los siguientes:
   * Comentario: El texto que se escriba en este campo será la descripción que
     aparezca en la nueva línea de venta.
 
+Ejemplo
+=======
+A modo de ejemplo, imágine que desea hacer una promoción de venta durante un
+determinado periodo de tiempo de regalar un producto por la compra de dos o
+más. Pues bien lo que se debería hacer es, crear una nueva regla de venta,
+ponerle una descripción y las fechas entre las que la promoción de venta estará
+vigente. A continuación habría que crear una condición para el producto que se
+desease añadir a la promoción, el criterio a seleccionar sería el de "Cantidad
+total de productos", la condición "mayor o igual que" y la cantidad 2.
+Finalmente quedaría por añadir la acción a realizar: Regalar un producto extra
+por la compra de dos o más. Para ello habría que asignar la acción "Obtenga X
+productos gratis", en el producto se seleccionaría el producto que se desea
+regalar, en la cantidad el número de productos a regalar y en el comentario, el
+texto que queremos que aparezca en la línea de venta y la factura. Y con esto
+hemos terminado. A partir de ahora, cada vez que realicemos una venta que
+cumpla la condición de esta regla de venta y se pase de estado borrador a
+presupuesto, se añadirá una nueva línea a la misma con el nuevo producto de
+regalo.
+
 Tienda
 ======
 

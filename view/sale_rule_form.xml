@@ -19,6 +19,12 @@ copyright notices and license terms. -->
     <field name="shop"/>
     <label name="category"/>
     <field name="category"/>
+    <label name="coupon"/>
+    <field name="coupon"/>
+    <label name="max_coupon"/>
+    <field name="max_coupon"/>
+    <label name="max_party_coupon"/>
+    <field name="max_party_coupon"/>
     <notebook colspan="6">
         <page string="Conditions" id="conditions">
             <label name="quantifier"/>

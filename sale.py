@@ -43,6 +43,7 @@ class Sale:
             'readonly': Eval('state') != 'draft',
             }, depends=['state'],
         help='Apply rules when change draft to quotation.')
+    coupon = fields.Char('Coupon')
 
     @classmethod
     def __setup__(cls):
@@ -68,37 +69,29 @@ class Sale:
     @classmethod
     def quote(cls, sales):
         super(Sale, cls).quote(sales)
-        cls.apply_rules(sales)
+        for sale in sales:
+            sale.apply_rule()
+        cls.save(sales)
+
+    def apply_rule(self):
+        'Apply Rule'
+        pool = Pool()
+        Rule = pool.get('sale.rule')
+        Line = pool.get('sale.line')
+
+        rules = Rule.get_rules(self)
+        Line.delete([l for l in self.lines if l.action is not None])
+        for rule in rules:
+            applied = rule.apply(self)
+            if applied and rule.stop_further:
+                break
 
     @classmethod
     def apply_rules(cls, sales):
-        pool = Pool()
-        Line = pool.get('sale.line')
-        Rule = pool.get('sale.rule')
-        today = datetime.today()
         for sale in sales:
             if not sale.add_rules:
                 continue
-            rules = Rule.search([
-                    ['OR',
-                        ('from_date', '<=', today),
-                        ('from_date', '=', None),
-                        ],
-                    ['OR',
-                        ('to_date', '>=', today),
-                        ('to_date', '=', None),
-                        ],
-                    ['OR',
-                        ('shop', '=', sale.shop),
-                        ('shop', '=', None),
-                        ],
-                    ['OR',
-                        ('category', 'in', sale.party.categories),
-                        ('category', '=', None),
-                        ],
-                    ])
-            Line.delete([l for l in sale.lines if l.action is not None])
-            Rule.apply_rules(rules, sale)
+            sale.apply_rule()
 
 
 class SaleRule(ModelView, ModelSQL):
@@ -121,6 +114,9 @@ class SaleRule(ModelView, ModelSQL):
             ], 'Quantifier',
         help='"All" requires that all conditions are true to apply this rule.'
             '\n"Any" applies this rule if any of the conditions is true.')
+    coupon = fields.Char('Coupon')
+    max_coupon = fields.Integer('Max Coupon')
+    max_party_coupon = fields.Integer('Max Coupon per Party')
 
     @classmethod
     def __setup__(cls):
@@ -135,27 +131,68 @@ class SaleRule(ModelView, ModelSQL):
     def default_quantifier():
         return 'all'
 
+    @classmethod
+    def _rules_domain(cls, sale):
+        today = datetime.today()
+        return [
+            ['OR',
+                ('from_date', '<=', today),
+                ('from_date', '=', None),
+                ],
+            ['OR',
+                ('to_date', '>=', today),
+                ('to_date', '=', None),
+                ],
+            ['OR',
+                ('shop', '=', sale.shop),
+                ('shop', '=', None),
+                ],
+            ['OR',
+                ('category', 'in', sale.party.categories),
+                ('category', '=', None),
+                ],
+            ]
+
+    @classmethod
+    def get_rules(cls, sale):
+        return cls.search(cls._rules_domain(sale))
+
     def apply_actions(self, sale):
         for action in self.actions:
-            action.apply(sale)
+            action.apply(sale).save()
 
     def meet_conditions(self, sale):
+        if not self.coupon_valid(sale):
+            return False
         if self.quantifier == 'any':
             return any([c.evaluate(sale) for c in self.conditions])
         return all([c.evaluate(sale) for c in self.conditions])
 
-    def apply_rule(self, sale):
+    def coupon_valid(self, sale):
+        Sale = Pool().get('sale.sale')
+
+        if self.coupon and self.coupon != sale.coupon:
+            return False
+
+        sales = Sale.search([
+                ('coupon', '=', self.coupon),
+                ])
+        if self.max_coupon < len(sales):
+            return False
+        if (self.max_party_coupon < len(
+                [s for s in sales if s.party == sale.party])):
+            return False
+        return True
+
+    def apply(self, sale):
         applicable = self.meet_conditions(sale)
         if applicable:
             self.apply_actions(sale)
         return applicable
 
-    @classmethod
-    def apply_rules(cls, rules, sale):
-        for rule in rules:
-            applied = rule.apply_rule(sale)
-            if applied and rule.stop_further:
-                break
+    def checkout_rules(self, sale):
+        if self.meet_conditions(sale):
+            return [a.apply(sale) for a in self.actions]
 
 
 class SaleRuleAction(ModelSQL, ModelView):
@@ -218,6 +255,7 @@ class SaleRuleAction(ModelSQL, ModelView):
         line.type = 'line'
         line.sequence = 9999
         line.on_change_product()
+        line.action = self
         return line
 
     def apply_stop_sale(self, sale):
@@ -242,8 +280,7 @@ class SaleRuleAction(ModelSQL, ModelView):
         return line
 
     def apply(self, sale):
-        line = getattr(self, 'apply_%s' % self.action_type)(sale)
-        line.save()
+        return getattr(self, 'apply_%s' % self.action_type)(sale)
 
 
 class SaleRuleCondition(ModelSQL, ModelView):
@@ -318,11 +355,12 @@ class SaleRuleCondition(ModelSQL, ModelView):
 
     def evaluate_sum(self, sale):
         quantity = sum([l.quantity for l in sale.lines
-            if getattr(l, self.criteria) == getattr(self, self.criteria)])
+            if getattr(l, self.criteria) == getattr(self, self.criteria)
+                and l.quantity])
         return self.apply_comparison(quantity)
 
     def evaluate_total_products(self, sale):
-        quantity = sum([l.quantity for l in sale.lines])
+        quantity = sum([l.quantity for l in sale.lines if l.quantity])
         return self.apply_comparison(quantity)
 
     def evaluate_product(self, sale):
@@ -335,7 +373,7 @@ class SaleRuleCondition(ModelSQL, ModelView):
                 (self.criteria, '=', getattr(self, self.criteria)),
                 ])
         quantity = sum([l.quantity for l in sale.lines
-                if l.product.template in templates])
+                if l.product.template in templates if l.quantity])
         return self.apply_comparison(quantity)
 
     def apply_comparison(self, value):

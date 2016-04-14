@@ -279,17 +279,20 @@ class SaleRuleAction(ModelSQL, ModelView):
     def apply_cart_discount_percentage(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -(sale.total_amount * self.quantity / 100)
+        line.amount = line.on_change_with_amount()
         return line
 
     def apply_cart_discoutn_fixed(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -self.quantity
+        line.amount = line.on_change_with_amount()
         return line
 
     def apply_get_product_free(self, sale):
         line = self.get_default_sale_line(sale)
         line.quantity = self.quantity
         line.unit_price = 0
+        line.amount = line.on_change_with_amount()
         return line
 
     def apply(self, sale):

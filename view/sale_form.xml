@@ -13,6 +13,6 @@ copyright notices and license terms. -->
     <xpath expr="/form/notebook/page/group/group/button[@name='cancel']"
             position="before">
         <button name="apply_rules" string="Apply Rules"
-            icon="tryton-star" colspan="2"/>
+            icon="tryton-star"/>
     </xpath>
 </data>

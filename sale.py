@@ -80,11 +80,16 @@ class Sale:
         Line = pool.get('sale.line')
 
         rules = Rule.get_rules(self)
-        Line.delete([l for l in self.lines if l.action is not None])
+        to_delete = [l for l in self.lines if l.action is not None]
+        if to_delete:
+            Line.delete(to_delete)
+
+        lines = []
         for rule in rules:
-            applied = rule.apply(self)
-            if applied and rule.stop_further:
+            lines = rule.apply(self)
+            if lines and rule.stop_further:
                 break
+        return lines
 
     @classmethod
     def apply_rules(cls, sales):
@@ -97,7 +102,7 @@ class Sale:
 class SaleRule(ModelView, ModelSQL):
     'Sale Rule'
     __name__ = 'sale.rule'
-    name = fields.Char('Description', required=True)
+    name = fields.Char('Description', required=True, translate=True)
     active = fields.Boolean('Active')
     from_date = fields.DateTime('From Date')
     to_date = fields.DateTime('To Date')
@@ -158,8 +163,13 @@ class SaleRule(ModelView, ModelSQL):
         return cls.search(cls._rules_domain(sale))
 
     def apply_actions(self, sale):
+        lines = []
         for action in self.actions:
-            action.apply(sale).save()
+            l = action.apply(sale)
+            if Transaction().context.get('apply_rule', True):
+                l.save()
+            lines.append(l)
+        return lines
 
     def meet_conditions(self, sale):
         if not self.coupon_valid(sale):
@@ -187,9 +197,10 @@ class SaleRule(ModelView, ModelSQL):
 
     def apply(self, sale):
         applicable = self.meet_conditions(sale)
+        lines = []
         if applicable:
-            self.apply_actions(sale)
-        return applicable
+            lines = self.apply_actions(sale)
+        return lines
 
     def checkout_rules(self, sale):
         if self.meet_conditions(sale):

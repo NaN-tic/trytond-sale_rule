@@ -356,9 +356,8 @@ class SaleRuleCondition(ModelSQL, ModelView):
         return getattr(self, 'evaluate_%s' % self.criteria)(sale)
 
     def evaluate_amount(self, sale):
-        Sale = Pool().get('sale.sale')
-        amount = Sale.get_amount([sale], [self.criteria])
-        return self.apply_comparison(amount[self.criteria][sale.id])
+        amount = getattr(sale, self.criteria)
+        return self.apply_comparison(amount)
 
     def evaluate_untaxed_amount(self, sale):
         return self.evaluate_amount(sale)

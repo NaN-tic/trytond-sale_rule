@@ -31,7 +31,8 @@ COMPARATORS = [
     ]
 ACTION_TYPES = [
     ('cart_discount_percentage', 'Discount % on Sub Total'),
-    ('cart_discount_fixed', 'Fixed amount on Sub Total'),
+    ('cart_base_discount_percentage', 'Discount % on Base'),
+    ('cart_discount_fixed', 'Fixed amount'),
     ('stop_sale', 'Stop Sale'),
     ('get_product_free', 'Get X Product Free'),
     ]
@@ -279,6 +280,12 @@ class SaleRuleAction(ModelSQL, ModelView):
     def apply_cart_discount_percentage(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -(sale.total_amount * self.quantity / 100)
+        line.amount = line.on_change_with_amount()
+        return line
+
+    def apply_cart_base_discount_percentage(self, sale):
+        line = self.get_default_sale_line(sale)
+        line.unit_price = -(sale.untaxed_amount * self.quantity / 100)
         line.amount = line.on_change_with_amount()
         return line
 

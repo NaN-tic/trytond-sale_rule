@@ -140,7 +140,8 @@ class SaleRule(ModelView, ModelSQL):
     @classmethod
     def _rules_domain(cls, sale):
         today = datetime.today()
-        return [
+
+        domain = [
             ['OR',
                 ('from_date', '<=', today),
                 ('from_date', '=', None),
@@ -153,11 +154,13 @@ class SaleRule(ModelView, ModelSQL):
                 ('shop', '=', sale.shop),
                 ('shop', '=', None),
                 ],
-            ['OR',
+            ]
+        if sale.party:
+            domain.append(['OR',
                 ('category', 'in', sale.party.categories),
                 ('category', '=', None),
-                ],
-            ]
+                ])
+        return domain
 
     @classmethod
     def get_rules(cls, sale):

@@ -2,7 +2,7 @@
 <!-- This file is part of sale_rule module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
-<form string="Sale Rule" col="6">
+<form col="6">
     <label name="action_type"/>
     <field name="action_type"/>
     <label name="product"/>

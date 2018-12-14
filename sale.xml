@@ -43,6 +43,16 @@ copyright notices and license terms. -->
             action="act_sale_rule"
             id="menu_sale_rule" icon="tryton-list"/>
 
+        <record model="ir.model.button" id="apply_rules_button">
+            <field name="name">apply_rules</field>
+            <field name="string">Apply Rules</field>
+            <field name="model" search="[('model', '=', 'sale.sale')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="apply_rules_button_group_sale">
+            <field name="button" ref="apply_rules_button"/>
+            <field name="group" ref="sale.group_sale"/>
+        </record>
+
         <!-- sale.rule.condition -->
         <record model="ir.ui.view" id="sale_rule_condition_tree_view">
             <field name="model">sale.rule.condition</field>

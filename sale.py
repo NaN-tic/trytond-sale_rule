@@ -243,15 +243,15 @@ class SaleRuleAction(ModelSQL, ModelView):
                 'sale_forbidden': ('You cannot make this sale because of %s.'),
                 })
 
-    @fields.depends('account')
+    @fields.depends('rule')
     def on_change_with_currency_digits(self, name=None):
-        return self.rule.shop and self.rule.shop.currency.digits or 2
+        return (self.rule and self.rule.shop and
+            self.rule.shop.currency.digits or 2)
 
     @fields.depends('rule')
     def on_change_action_type(self):
-        if self.rule:
-            self.currency_digits = (self.rule.shop
-                and self.rule.shop.currency.digits or 2)
+        self.currency_digits = (self.rule and self.rule.shop
+            and self.rule.shop.currency.digits or 2)
 
     def get_rec_name(self, name):
         for selection in self._fields['action_type'].selection:
@@ -344,15 +344,15 @@ class SaleRuleCondition(ModelSQL, ModelView):
         super(SaleRuleCondition, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
 
-    @fields.depends('account')
+    @fields.depends('rule')
     def on_change_with_currency_digits(self, name=None):
-        return self.rule.shop and self.rule.shop.currency.digits or 2
+        return (self.rule and self.rule.shop and
+                self.rule.shop.currency.digits or 2)
 
     @fields.depends('rule')
     def on_change_criteria(self):
-        if self.rule:
-            self.currency_digits = (self.rule.shop
-                and self.rule.shop.currency.digits or 2)
+        self.currency_digits = (self.rule and self.rule.shop
+            and self.rule.shop.currency.digits or 2)
 
     @staticmethod
     def default_condition():

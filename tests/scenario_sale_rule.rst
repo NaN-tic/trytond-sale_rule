@@ -7,6 +7,7 @@ Imports::
     >>> import datetime
     >>> from decimal import Decimal
     >>> from proteus import config, Model, Wizard
+    >>> from trytond.tests.tools import activate_modules
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
     >>> from trytond.modules.account.tests.tools import create_chart, \
@@ -14,19 +15,9 @@ Imports::
     >>> from trytond.modules.account_invoice.tests.tools import \
     ...     create_payment_term
 
-Configure::
-
-    >>> config = config.set_trytond()
-    >>> config.pool.test = True
-
 Install sale_rule::
 
-    >>> Module = Model.get('ir.module')
-    >>> module, = Module.find([
-    ...         ('name', '=', 'sale_rule'),
-    ...         ])
-    >>> module.click('install')
-    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
+    >>> config = activate_modules('sale_rule')
 
 Create company::
 
@@ -63,13 +54,14 @@ Create products::
     >>> template.salable = True
     >>> template.lead_time = datetime.timedelta(0)
     >>> template.list_price = Decimal('20')
-    >>> template.cost_price = Decimal('8')
     >>> template.account_revenue = revenue
     >>> template.save()
     >>> product1 = Product()
     >>> product1.template = template
+    >>> product1.cost_price = Decimal('8')
     >>> product1.save()
     >>> product2 = Product()
+    >>> product2.cost_price = Decimal('8')
     >>> product2.template = template
     >>> product2.save()
 

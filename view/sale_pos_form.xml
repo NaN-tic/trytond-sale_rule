@@ -3,14 +3,11 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <data>
-    <xpath expr="/form/notebook/page[@id=&quot;sale&quot;]/field[@name=&quot;ticket_number&quot;]"
-            position="after">
+    <xpath expr="/form/notebook/page[@id='sale']/field[@name='ticket_number']" position="after">
         <label name="add_rules"/>
         <field name="add_rules"/>
     </xpath>
-    <xpath expr="/form/group[@id='cash']/button[@name='wizard_sale_payment']"
-            position="after">
-        <button name="apply_rules" string="Apply Rules"
-            icon="tryton-star" colspan="2"/>
+    <xpath expr="/form/group[@id='cash']/button[@name='wizard_sale_payment']" position="after">
+        <button name="apply_rules" icon="tryton-star" colspan="2"/>
     </xpath>
 </data>

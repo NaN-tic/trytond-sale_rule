@@ -7,8 +7,7 @@ from trytond.pool import PoolMeta
 __all__ = ['SaleShop']
 
 
-class SaleShop:
-    __metaclass__ = PoolMeta
+class SaleShop(metaclass=PoolMeta):
     __name__ = 'sale.shop'
     apply_rules = fields.Boolean('Apply Rules',
         help='Apply rules when change draft to quotation.')

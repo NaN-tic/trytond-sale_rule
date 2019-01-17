@@ -37,8 +37,7 @@ ACTION_TYPES = [
     ]
 
 
-class Sale:
-    __metaclass__ = PoolMeta
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
     add_rules = fields.Boolean('Add Rules', states={
             'readonly': Eval('state') != 'draft',
@@ -429,7 +428,6 @@ class SaleRuleCondition(ModelSQL, ModelView):
         return eval('%s %s %s != 0' % (value, '%', self.quantity))
 
 
-class SaleLine:
-    __metaclass__ = PoolMeta
+class SaleLine(metaclass=PoolMeta):
     __name__ = 'sale.line'
     action = fields.Many2One('sale.rule.action', 'Rule Action')

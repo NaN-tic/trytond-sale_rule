@@ -11,7 +11,7 @@ Imports::
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
     >>> from trytond.modules.account.tests.tools import create_chart, \
-    ...     get_accounts
+    ...     get_accounts, create_tax
     >>> from trytond.modules.account_invoice.tests.tools import \
     ...     create_payment_term
 
@@ -34,12 +34,24 @@ Create chart of accounts::
     >>> _ = create_chart(company)
     >>> accounts = get_accounts(company)
     >>> revenue = accounts['revenue']
+    >>> revenue = accounts['revenue']
+    >>> expense = accounts['expense']
+    >>> cash = accounts['cash']
 
 Create customer::
 
     >>> Party = Model.get('party.party')
     >>> customer = Party(name='Customer')
     >>> customer.save()
+
+Create account categories::
+
+    >>> ProductCategory = Model.get('product.category')
+    >>> account_category = ProductCategory(name="Account Category")
+    >>> account_category.accounting = True
+    >>> account_category.account_expense = expense
+    >>> account_category.account_revenue = revenue
+    >>> account_category.save()
 
 Create products::
 
@@ -54,7 +66,7 @@ Create products::
     >>> template.salable = True
     >>> template.lead_time = datetime.timedelta(0)
     >>> template.list_price = Decimal('20')
-    >>> template.account_revenue = revenue
+    >>> template.account_category = account_category
     >>> template.save()
     >>> product1 = Product()
     >>> product1.template = template

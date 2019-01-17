@@ -6,6 +6,9 @@ from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
+
 
 __all__ = ['Sale', 'SaleRule', 'SaleRuleAction', 'SaleRuleCondition',
     'SaleLine']
@@ -238,9 +241,6 @@ class SaleRuleAction(ModelSQL, ModelView):
     def __setup__(cls):
         super(SaleRuleAction, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
-        cls._error_messages.update({
-                'sale_forbidden': ('You cannot make this sale because of %s.'),
-                })
 
     @fields.depends('rule')
     def on_change_with_currency_digits(self, name=None):
@@ -275,9 +275,8 @@ class SaleRuleAction(ModelSQL, ModelView):
         return line
 
     def apply_stop_sale(self, sale):
-        self.raise_user_error('sale_forbidden',
-            error_args=(self.comment,),
-            )
+        raise UserError(gettext('sale_rule.sale_forbidden',
+            message=self.comment))
 
     def apply_cart_discount_percentage(self, sale):
         line = self.get_default_sale_line(sale)

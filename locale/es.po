@@ -2,10 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:sale.rule.action:"
-msgid "You cannot make this sale because of %s."
-msgstr "No puede realizar esta venta porque %s."
-
 msgctxt "field:sale.line,action:"
 msgid "Rule Action"
 msgstr "Acción de regla"
@@ -30,21 +26,9 @@ msgctxt "field:sale.rule,coupon:"
 msgid "Coupon"
 msgstr "Cupón"
 
-msgctxt "field:sale.rule,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:sale.rule,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
 msgctxt "field:sale.rule,from_date:"
 msgid "From Date"
 msgstr "Desde fecha"
-
-msgctxt "field:sale.rule,id:"
-msgid "ID"
-msgstr "Id"
 
 msgctxt "field:sale.rule,max_coupon:"
 msgid "Max Coupon"
@@ -62,10 +46,6 @@ msgctxt "field:sale.rule,quantifier:"
 msgid "Quantifier"
 msgstr "Cuantificador"
 
-msgctxt "field:sale.rule,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:sale.rule,sequence:"
 msgid "Sequence"
 msgstr "Secuencia"
@@ -82,14 +62,6 @@ msgctxt "field:sale.rule,to_date:"
 msgid "To Date"
 msgstr "A fecha"
 
-msgctxt "field:sale.rule,write_date:"
-msgid "Write Date"
-msgstr "Fecha actualización"
-
-msgctxt "field:sale.rule,write_uid:"
-msgid "Write User"
-msgstr "Usuario actualitzación"
-
 msgctxt "field:sale.rule.action,action_type:"
 msgid "Action"
 msgstr "Acción"
@@ -98,21 +70,9 @@ msgctxt "field:sale.rule.action,comment:"
 msgid "Comment"
 msgstr "Comentario"
 
-msgctxt "field:sale.rule.action,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:sale.rule.action,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
 msgctxt "field:sale.rule.action,currency_digits:"
 msgid "Currency Digits"
 msgstr "Decimales de moneda"
-
-msgctxt "field:sale.rule.action,id:"
-msgid "ID"
-msgstr "Id"
 
 msgctxt "field:sale.rule.action,product:"
 msgid "Product"
@@ -122,10 +82,6 @@ msgctxt "field:sale.rule.action,quantity:"
 msgid "Quantity"
 msgstr "Cantidad"
 
-msgctxt "field:sale.rule.action,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:sale.rule.action,rule:"
 msgid "Rule"
 msgstr "Regla"
@@ -133,14 +89,6 @@ msgstr "Regla"
 msgctxt "field:sale.rule.action,sequence:"
 msgid "Sequence"
 msgstr "Secuencia"
-
-msgctxt "field:sale.rule.action,write_date:"
-msgid "Write Date"
-msgstr "Fecha actualización"
-
-msgctxt "field:sale.rule.action,write_uid:"
-msgid "Write User"
-msgstr "Usuario actualitzación"
 
 msgctxt "field:sale.rule.condition,category:"
 msgid "Product Category"
@@ -150,14 +98,6 @@ msgctxt "field:sale.rule.condition,condition:"
 msgid "Condition"
 msgstr "Condición"
 
-msgctxt "field:sale.rule.condition,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:sale.rule.condition,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
 msgctxt "field:sale.rule.condition,criteria:"
 msgid "Criteria"
 msgstr "Criterio"
@@ -166,10 +106,6 @@ msgctxt "field:sale.rule.condition,currency_digits:"
 msgid "Currency Digits"
 msgstr "Decimales de moneda"
 
-msgctxt "field:sale.rule.condition,id:"
-msgid "ID"
-msgstr "Id"
-
 msgctxt "field:sale.rule.condition,product:"
 msgid "Product"
 msgstr "Producto"
@@ -177,10 +113,6 @@ msgstr "Producto"
 msgctxt "field:sale.rule.condition,quantity:"
 msgid "Quantity"
 msgstr "Cantidad"
-
-msgctxt "field:sale.rule.condition,rec_name:"
-msgid "Name"
-msgstr "Nombre"
 
 msgctxt "field:sale.rule.condition,rule:"
 msgid "Rule"
@@ -193,14 +125,6 @@ msgstr "Secuencia"
 msgctxt "field:sale.rule.condition,stop_further:"
 msgid "Stop further checks"
 msgstr "Detiene resto de comprovaciones"
-
-msgctxt "field:sale.rule.condition,write_date:"
-msgid "Write Date"
-msgstr "Fecha actualización"
-
-msgctxt "field:sale.rule.condition,write_uid:"
-msgid "Write User"
-msgstr "Usuario actualitzación"
 
 msgctxt "field:sale.sale,add_rules:"
 msgid "Add Rules"
@@ -241,6 +165,10 @@ msgctxt "model:ir.action,name:act_sale_rule"
 msgid "Sale Rule"
 msgstr "Regla de venta"
 
+msgctxt "model:ir.model.button,string:apply_rules_button"
+msgid "Apply Rules"
+msgstr "Aplicar reglas"
+
 msgctxt "model:ir.ui.menu,name:menu_sale_rule"
 msgid "Sale Rule"
 msgstr "Regla de venta"
@@ -266,12 +194,16 @@ msgid "Any"
 msgstr "Cualquiera"
 
 msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Base"
+msgstr "Descuento % a la base"
+
+msgctxt "selection:sale.rule.action,action_type:"
 msgid "Discount % on Sub Total"
 msgstr "% de descuento en subtotal"
 
 msgctxt "selection:sale.rule.action,action_type:"
-msgid "Fixed amount on Sub Total"
-msgstr "Importe fijo en subtotal"
+msgid "Fixed amount"
+msgstr ""
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Get X Product Free"
@@ -360,14 +292,6 @@ msgstr "Acciones"
 msgctxt "view:sale.rule:"
 msgid "Conditions"
 msgstr "Condiciones"
-
-msgctxt "view:sale.rule:"
-msgid "Sale Rule"
-msgstr "Regla de venta"
-
-msgctxt "view:sale.rule:"
-msgid "Sale Rules"
-msgstr "Reglas de venta"
 
 msgctxt "view:sale.rule:"
 msgid "Time"

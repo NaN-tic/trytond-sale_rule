@@ -2,7 +2,7 @@
 <!-- This file is part sale_rule module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <data>
-    <xpath expr="/form/notebook/page[@id='general']/field[@name='warehouse']" position="after">
+    <xpath expr="/form/notebook/page[@id='general']/field[@name='payment_term']" position="after">
         <label name="apply_rules"/>
         <field name="apply_rules"/>
     </xpath>

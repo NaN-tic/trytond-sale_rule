@@ -9,7 +9,7 @@ copyright notices and license terms. -->
         <label name="coupon"/>
         <field name="coupon"/>
     </xpath>
-    <xpath expr="/form/notebook/page/group/group/button[@name='cancel']" position="before">
+    <xpath expr="/form/group/button[@name='cancel']" position="before">
         <button name="apply_rules" icon="tryton-star"/>
     </xpath>
 </data>

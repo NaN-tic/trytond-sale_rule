@@ -267,7 +267,8 @@ class SaleRuleAction(ModelSQL, ModelView):
         line.product = self.product
         if self.comment:
             line.description = self.comment
-        line.party = sale.party
+        if hasattr(line, 'party'):
+            line.party = sale.party
         line.type = 'line'
         line.sequence = 9999
         line.on_change_product()

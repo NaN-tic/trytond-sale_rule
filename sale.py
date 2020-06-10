@@ -64,6 +64,7 @@ class Sale(metaclass=PoolMeta):
         user = User(Transaction().user)
         return user.shop.apply_rules if user.shop else True
 
+    @fields.depends('_parent_shop.apply_rules')
     def on_change_shop(self):
         super(Sale, self).on_change_shop()
         if self.shop:
@@ -242,12 +243,12 @@ class SaleRuleAction(ModelSQL, ModelView):
         super(SaleRuleAction, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
 
-    @fields.depends('rule')
+    @fields.depends('rule', '_parent_rule.shop')
     def on_change_with_currency_digits(self, name=None):
         return (self.rule and self.rule.shop and
             self.rule.shop.currency.digits or 2)
 
-    @fields.depends('rule')
+    @fields.depends('rule', '_parent_rule.shop')
     def on_change_action_type(self):
         self.currency_digits = (self.rule and self.rule.shop
             and self.rule.shop.currency.digits or 2)
@@ -343,12 +344,12 @@ class SaleRuleCondition(ModelSQL, ModelView):
         super(SaleRuleCondition, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
 
-    @fields.depends('rule')
+    @fields.depends('rule', '_parent_rule.shop')
     def on_change_with_currency_digits(self, name=None):
         return (self.rule and self.rule.shop and
                 self.rule.shop.currency.digits or 2)
 
-    @fields.depends('rule')
+    @fields.depends('rule', '_parent_rule.shop')
     def on_change_criteria(self):
         self.currency_digits = (self.rule and self.rule.shop
             and self.rule.shop.currency.digits or 2)

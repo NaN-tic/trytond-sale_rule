@@ -9,10 +9,6 @@ from trytond.transaction import Transaction
 from trytond.i18n import gettext
 from trytond.exceptions import UserError
 
-
-__all__ = ['Sale', 'SaleRule', 'SaleRuleAction', 'SaleRuleCondition',
-    'SaleLine']
-
 CRITERIA = [
     ('untaxed_amount', 'Untaxed Amount'),
     ('tax_amount', 'Tax Amount'),

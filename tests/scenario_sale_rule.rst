@@ -104,7 +104,7 @@ Create Sale Shop::
     >>> shop.price_list = product_price_list
     >>> shop.payment_term = payment_term
     >>> sequence, = Sequence.find([
-    ...         ('code', '=', 'sale.sale'),
+    ...         ('sequence_type.name', '=', 'Sale'),
     ...         ])
     >>> shop.sale_sequence = sequence
     >>> shop.sale_invoice_method = 'shipment'

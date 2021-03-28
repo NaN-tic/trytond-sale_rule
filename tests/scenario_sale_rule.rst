@@ -7,7 +7,7 @@ Imports::
     >>> import datetime
     >>> from decimal import Decimal
     >>> from proteus import config, Model, Wizard
-    >>> from trytond.tests.tools import activate_modules
+    >>> from trytond.tests.tools import activate_modules, set_user
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
     >>> from trytond.modules.account.tests.tools import create_chart, \
@@ -23,11 +23,6 @@ Create company::
 
     >>> _ = create_company()
     >>> company = get_company()
-
-Reload the context::
-
-    >>> User = Model.get('res.user')
-    >>> config._context = User.get_preferences(True, config.context)
 
 Create chart of accounts::
 
@@ -113,10 +108,12 @@ Create Sale Shop::
 
 Save Sale Shop User::
 
+    >>> User = Model.get('res.user')
     >>> user, = User.find([])
     >>> user.shops.append(shop)
     >>> user.shop = shop
     >>> user.save()
+    >>> set_user(user)
 
 Create Rule::
 

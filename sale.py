@@ -8,6 +8,7 @@ from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.i18n import gettext
 from trytond.exceptions import UserError
+from trytond.modules.product import price_digits
 
 CRITERIA = [
     ('untaxed_amount', 'Untaxed Amount'),
@@ -223,31 +224,18 @@ class SaleRuleAction(ModelSQL, ModelView):
             'invisible': Eval('action_type') == 'stop_sale',
             },
         depends=['action_type'])
-    currency_digits = fields.Function(fields.Integer('Currency Digits'),
-        'on_change_with_currency_digits')
     quantity = fields.Numeric('Quantity',
         states={
             'required': Eval('action_type') != 'stop_sale',
             'invisible': Eval('action_type') == 'stop_sale',
             },
-        digits=(16, Eval('currency_digits', 2)),
-        depends=['currency_digits', 'action_type'])
+        digits=price_digits, depends=['action_type'])
     comment = fields.Text('Comment', translate=True)
 
     @classmethod
     def __setup__(cls):
         super(SaleRuleAction, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
-
-    @fields.depends('rule', '_parent_rule.shop')
-    def on_change_with_currency_digits(self, name=None):
-        return (self.rule and self.rule.shop and
-            self.rule.shop.currency.digits or 2)
-
-    @fields.depends('rule', '_parent_rule.shop')
-    def on_change_action_type(self):
-        self.currency_digits = (self.rule and self.rule.shop
-            and self.rule.shop.currency.digits or 2)
 
     def get_rec_name(self, name):
         for selection in self._fields['action_type'].selection:
@@ -313,14 +301,7 @@ class SaleRuleCondition(ModelSQL, ModelView):
     sequence = fields.Integer('Sequence')
     stop_further = fields.Boolean('Stop further checks')
     criteria = fields.Selection(CRITERIA, 'Criteria', required=True)
-    currency_digits = fields.Function(fields.Integer('Currency Digits'),
-        'on_change_with_currency_digits')
-    quantity = fields.Numeric('Quantity',
-        states={
-            'required': True,
-            },
-        digits=(16, Eval('currency_digits', 2)),
-        depends=['currency_digits'])
+    quantity = fields.Numeric('Quantity', required=True, digits=price_digits)
     product = fields.Many2One('product.product', 'Product',
         states={
             'required': Eval('criteria') == 'product',
@@ -339,16 +320,6 @@ class SaleRuleCondition(ModelSQL, ModelView):
     def __setup__(cls):
         super(SaleRuleCondition, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
-
-    @fields.depends('rule', '_parent_rule.shop')
-    def on_change_with_currency_digits(self, name=None):
-        return (self.rule and self.rule.shop and
-                self.rule.shop.currency.digits or 2)
-
-    @fields.depends('rule', '_parent_rule.shop')
-    def on_change_criteria(self):
-        self.currency_digits = (self.rule and self.rule.shop
-            and self.rule.shop.currency.digits or 2)
 
     @staticmethod
     def default_condition():

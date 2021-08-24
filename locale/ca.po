@@ -70,10 +70,6 @@ msgctxt "field:sale.rule.action,comment:"
 msgid "Comment"
 msgstr "Comentari"
 
-msgctxt "field:sale.rule.action,currency_digits:"
-msgid "Currency Digits"
-msgstr "Decimals de moneda"
-
 msgctxt "field:sale.rule.action,product:"
 msgid "Product"
 msgstr "Producte"
@@ -101,10 +97,6 @@ msgstr "Condició"
 msgctxt "field:sale.rule.condition,criteria:"
 msgid "Criteria"
 msgstr "Criteri"
-
-msgctxt "field:sale.rule.condition,currency_digits:"
-msgid "Currency Digits"
-msgstr "Decimals de moneda"
 
 msgctxt "field:sale.rule.condition,product:"
 msgid "Product"

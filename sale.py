@@ -2,7 +2,7 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from datetime import datetime
-from trytond.model import ModelView, ModelSQL, fields
+from trytond.model import ModelView, ModelSQL, DeactivableMixin, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
@@ -99,11 +99,10 @@ class Sale(metaclass=PoolMeta):
             sale.apply_rule()
 
 
-class SaleRule(ModelView, ModelSQL):
+class SaleRule(DeactivableMixin, ModelView, ModelSQL):
     'Sale Rule'
     __name__ = 'sale.rule'
     name = fields.Char('Description', required=True, translate=True)
-    active = fields.Boolean('Active')
     from_date = fields.DateTime('From Date')
     to_date = fields.DateTime('To Date')
     sequence = fields.Integer('Sequence')
@@ -127,10 +126,6 @@ class SaleRule(ModelView, ModelSQL):
     def __setup__(cls):
         super(SaleRule, cls).__setup__()
         cls._order.insert(0, ('sequence', 'ASC'))
-
-    @staticmethod
-    def default_active():
-        return True
 
     @staticmethod
     def default_quantifier():

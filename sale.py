@@ -390,7 +390,7 @@ class SaleRuleCondition(ModelSQL, ModelView):
     def evaluate_product(self, sale):
         return self.evaluate_sum(sale)
 
-    def evaluate_category(self, sale):
+    def evaluate_account_category(self, sale):
         pool = Pool()
         Template = pool.get('product.template')
         templates = Template.search([

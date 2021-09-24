@@ -330,10 +330,11 @@ class SaleRuleCondition(ModelSQL, ModelView):
             'invisible': Eval('criteria') != 'product',
             },
         depends=['criteria'])
-    category = fields.Many2One('product.category', 'Product Category',
+    account_category = fields.Many2One('product.category',
+        'Product Account Category',
         states={
-            'required': Eval('criteria') == 'category',
-            'invisible': Eval('criteria') != 'category',
+            'required': Eval('criteria') == 'account_category',
+            'invisible': Eval('criteria') != 'account_category',
             },
         depends=['criteria'])
     condition = fields.Selection(COMPARATORS, 'Condition', required=True)

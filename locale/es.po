@@ -90,9 +90,9 @@ msgctxt "field:sale.rule.action,sequence:"
 msgid "Sequence"
 msgstr "Secuencia"
 
-msgctxt "field:sale.rule.condition,category:"
-msgid "Product Category"
-msgstr "Categoría de producto"
+msgctxt "field:sale.rule.condition,account_category:"
+msgid "Product Account Category"
+msgstr "Categoría contable de producto"
 
 msgctxt "field:sale.rule.condition,condition:"
 msgid "Condition"

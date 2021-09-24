@@ -6,7 +6,7 @@ copyright notices and license terms. -->
     <field name="sequence"/>
     <field name="criteria"/>
     <field name="product"/>
-    <field name="category"/>
+    <field name="account_category"/>
     <field name="condition"/>
     <field name="quantity"/>
     <field name="stop_further"/>

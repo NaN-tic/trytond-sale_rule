@@ -86,9 +86,9 @@ msgctxt "field:sale.rule.action,sequence:"
 msgid "Sequence"
 msgstr "Seqüència"
 
-msgctxt "field:sale.rule.condition,category:"
-msgid "Product Category"
-msgstr "Categoria de producte"
+msgctxt "field:sale.rule.condition,account_category:"
+msgid "Product Account Category"
+msgstr "Categoria comptable del producte"
 
 msgctxt "field:sale.rule.condition,condition:"
 msgid "Condition"

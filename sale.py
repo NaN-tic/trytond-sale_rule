@@ -15,7 +15,7 @@ CRITERIA = [
     ('total_amount', 'Total Amount'),
     ('total_products', 'Total Products'),
     ('product', 'Total Product Quantity'),
-    ('category', 'Total Product Category Quantity'),
+    ('account_category', 'Product Account Category'),
     ]
 COMPARATORS = [
     ('equal', 'equals'),
@@ -298,7 +298,6 @@ class SaleRuleAction(ModelSQL, ModelView):
 
     def apply(self, sale):
         return getattr(self, 'apply_%s' % self.action_type)(sale)
-
 
 class SaleRuleCondition(ModelSQL, ModelView):
     'Sale Rule Condition'

@@ -262,18 +262,24 @@ class SaleRuleAction(ModelSQL, ModelView):
     def apply_cart_discount_percentage(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -(sale.total_amount * self.quantity / 100)
+        if hasattr(line, 'gross_unit_price'):
+            line.gross_unit_price = line.unit_price
         line.amount = line.on_change_with_amount()
         return line
 
     def apply_cart_base_discount_percentage(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -(sale.untaxed_amount * self.quantity / 100)
+        if hasattr(line, 'gross_unit_price'):
+            line.gross_unit_price = line.unit_price
         line.amount = line.on_change_with_amount()
         return line
 
     def apply_cart_discount_fixed(self, sale):
         line = self.get_default_sale_line(sale)
         line.unit_price = -self.quantity
+        if hasattr(line, 'gross_unit_price'):
+            line.gross_unit_price = line.unit_price
         line.amount = line.on_change_with_amount()
         return line
 
@@ -281,6 +287,8 @@ class SaleRuleAction(ModelSQL, ModelView):
         line = self.get_default_sale_line(sale)
         line.quantity = self.quantity
         line.unit_price = 0
+        if hasattr(line, 'gross_unit_price'):
+            line.gross_unit_price = line.unit_price
         line.amount = line.on_change_with_amount()
         return line
 

@@ -90,7 +90,7 @@ class Sale(metaclass=PoolMeta):
 
         lines = []
         for rule in rules:
-            lines = rule.apply(self)
+            lines += rule.apply(self)
             if lines and rule.stop_further:
                 break
         return lines

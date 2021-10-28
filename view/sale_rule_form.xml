@@ -5,11 +5,13 @@ copyright notices and license terms. -->
 <form col="4">
     <label name="name"/>
     <field name="name"/>
-    <group colspan="2" col="4" id="booleans">
+    <group colspan="2" col="6" id="booleans">
         <label name="active"/>
         <field name="active"/>
         <label name="stop_further"/>
         <field name="stop_further"/>
+        <label name="sequence"/>
+        <field name="sequence"/>
     </group>
     <label name="from_date"/>
     <field name="from_date"/>

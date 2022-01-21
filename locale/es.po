@@ -56,7 +56,7 @@ msgstr "Tienda"
 
 msgctxt "field:sale.rule,stop_further:"
 msgid "Stop further checks"
-msgstr "Detiene las comprovaciones"
+msgstr "Detiene las comprobaciones"
 
 msgctxt "field:sale.rule,to_date:"
 msgid "To Date"
@@ -116,7 +116,7 @@ msgstr "Secuencia"
 
 msgctxt "field:sale.rule.condition,stop_further:"
 msgid "Stop further checks"
-msgstr "Detiene resto de comprovaciones"
+msgstr "Detiene resto de comprobaciones"
 
 msgctxt "field:sale.sale,add_rules:"
 msgid "Add Rules"
@@ -195,7 +195,7 @@ msgstr "% de descuento en subtotal"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Fixed amount"
-msgstr ""
+msgstr "Cantidad fija"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Get X Product Free"
@@ -238,16 +238,16 @@ msgid "not multiple of"
 msgstr "no múltiple de"
 
 msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Product Account Category"
+msgstr "Categoría contable de producto"
+
+msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Tax Amount"
 msgstr "Total de impuestos"
 
 msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Total Amount"
 msgstr "Importe total"
-
-msgctxt "selection:sale.rule.condition,criteria:"
-msgid "Total Product Category Quantity"
-msgstr "Cantidad total de productos de categoría"
 
 msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Total Product Quantity"

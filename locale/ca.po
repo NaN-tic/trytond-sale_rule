@@ -187,7 +187,7 @@ msgstr "Qualsevol"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Discount % on Base"
-msgstr ""
+msgstr "Descompte % en la base"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Discount % on Sub Total"
@@ -195,7 +195,7 @@ msgstr "% de descompte en subtotal"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Fixed amount"
-msgstr ""
+msgstr "Import fix"
 
 msgctxt "selection:sale.rule.action,action_type:"
 msgid "Get X Product Free"
@@ -238,16 +238,16 @@ msgid "not multiple of"
 msgstr "no múltiple de"
 
 msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Product Account Category"
+msgstr "Categoria comptable del producte"
+
+msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Tax Amount"
 msgstr "Total de impostos"
 
 msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Total Amount"
 msgstr "Import total"
-
-msgctxt "selection:sale.rule.condition,criteria:"
-msgid "Total Product Category Quantity"
-msgstr "Quantitat total de productes de categoria"
 
 msgctxt "selection:sale.rule.condition,criteria:"
 msgid "Total Product Quantity"

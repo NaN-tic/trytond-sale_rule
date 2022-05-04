@@ -9,6 +9,7 @@ from trytond.tests.test_tryton import ModuleTestCase
 class SaleRuleTestCase(CompanyTestMixin, ModuleTestCase):
     'Test SaleRule module'
     module = 'sale_rule'
+    extras = ['sale_pos', 'sale_discount']
 
 
 del ModuleTestCase

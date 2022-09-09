@@ -91,6 +91,7 @@ class Sale(metaclass=PoolMeta):
         return lines
 
     @classmethod
+    @ModelView.button
     def apply_rules(cls, sales):
         for sale in sales:
             if not sale.add_rules:

@@ -70,8 +70,7 @@ class Sale(metaclass=PoolMeta):
     @classmethod
     def quote(cls, sales):
         super(Sale, cls).quote(sales)
-        for sale in sales:
-            sale.apply_rule()
+        cls.apply_rules(sales)
         cls.save(sales)
 
     def apply_rule(self):
@@ -93,6 +92,7 @@ class Sale(metaclass=PoolMeta):
         return lines
 
     @classmethod
+    @ModelView.button
     def apply_rules(cls, sales):
         for sale in sales:
             if not sale.add_rules:

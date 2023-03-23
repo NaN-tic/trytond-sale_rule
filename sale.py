@@ -69,9 +69,9 @@ class Sale(metaclass=PoolMeta):
 
     @classmethod
     def quote(cls, sales):
-        super(Sale, cls).quote(sales)
         cls.apply_rules(sales)
         cls.save(sales)
+        super(Sale, cls).quote(sales)
 
     def apply_rule(self):
         'Apply Rule'

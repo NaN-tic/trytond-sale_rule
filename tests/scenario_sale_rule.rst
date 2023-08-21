@@ -14,6 +14,7 @@ Imports::
     ...     get_accounts, create_tax
     >>> from trytond.modules.account_invoice.tests.tools import \
     ...     create_payment_term
+    >>> from trytond.modules.sale_shop.tests.tools import create_shop
 
 Install sale_rule::
 
@@ -80,30 +81,15 @@ Create payment term::
 Create Product Price List::
 
     >>> ProductPriceList = Model.get('product.price_list')
-    >>> product_price_list = ProductPriceList()
-    >>> product_price_list.name = 'Price List'
-    >>> product_price_list.company = company
-    >>> product_price_list.save()
+    >>> price_list = ProductPriceList(name='Price List', price='list_price')
+    >>> price_list_line = price_list.lines.new()
+    >>> price_list_line.formula = 'unit_price'
+    >>> price_list.save()
 
 Create Sale Shop::
 
     >>> Shop = Model.get('sale.shop')
-    >>> Sequence = Model.get('ir.sequence')
-    >>> Location = Model.get('stock.location')
-    >>> shop = Shop()
-    >>> shop.name = 'Sale Shop'
-    >>> warehouse, = Location.find([
-    ...         ('type', '=', 'warehouse'),
-    ...         ])
-    >>> shop.warehouse = warehouse
-    >>> shop.price_list = product_price_list
-    >>> shop.payment_term = payment_term
-    >>> sequence, = Sequence.find([
-    ...         ('sequence_type.name', '=', 'Sale'),
-    ...         ])
-    >>> shop.sale_sequence = sequence
-    >>> shop.sale_invoice_method = 'shipment'
-    >>> shop.sale_shipment_method = 'order'
+    >>> shop = create_shop(payment_term, price_list)
     >>> shop.save()
 
 Save Sale Shop User::

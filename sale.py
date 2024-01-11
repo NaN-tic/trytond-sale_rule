@@ -41,7 +41,7 @@ class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
     add_rules = fields.Boolean('Add Rules', states={
             'readonly': Eval('state') != 'draft',
-            }, depends=['state'],
+            },
         help='Apply rules when change draft to quotation.')
     coupon = fields.Char('Coupon')
 
@@ -224,7 +224,7 @@ class SaleRuleAction(ModelSQL, ModelView):
             'required': Eval('action_type') != 'stop_sale',
             'invisible': Eval('action_type') == 'stop_sale',
             },
-        digits=price_digits, depends=['action_type'])
+        digits=price_digits)
     comment = fields.Text('Comment', translate=True)
 
     @classmethod

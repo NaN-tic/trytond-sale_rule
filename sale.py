@@ -217,8 +217,7 @@ class SaleRuleAction(ModelSQL, ModelView):
         states={
             'required': Eval('action_type') != 'stop_sale',
             'invisible': Eval('action_type') == 'stop_sale',
-            },
-        depends=['action_type'])
+            })
     quantity = fields.Numeric('Quantity',
         states={
             'required': Eval('action_type') != 'stop_sale',
@@ -308,15 +307,13 @@ class SaleRuleCondition(ModelSQL, ModelView):
         states={
             'required': Eval('criteria') == 'product',
             'invisible': Eval('criteria') != 'product',
-            },
-        depends=['criteria'])
+            })
     account_category = fields.Many2One('product.category',
         'Product Account Category',
         states={
             'required': Eval('criteria') == 'account_category',
             'invisible': Eval('criteria') != 'account_category',
-            },
-        depends=['criteria'])
+            })
     condition = fields.Selection(COMPARATORS, 'Condition', required=True)
 
     @classmethod

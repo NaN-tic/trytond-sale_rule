@@ -46,7 +46,7 @@ copyright notices and license terms. -->
         <record model="ir.model.button" id="apply_rules_button">
             <field name="name">apply_rules</field>
             <field name="string">Apply Rules</field>
-            <field name="model" search="[('model', '=', 'sale.sale')]"/>
+            <field name="model">sale.sale</field>
         </record>
         <record model="ir.model.button-res.group" id="apply_rules_button_group_sale">
             <field name="button" ref="apply_rules_button"/>

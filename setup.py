@@ -8,10 +8,8 @@ import io
 from configparser import ConfigParser
 
 MODULE = 'sale_rule'
-PREFIX = 'trytonzz'
-MODULE2PREFIX = {
-    'sale_shop': 'trytonzz',
-    }
+PREFIX = 'nantic'
+MODULE2PREFIX = {}
 
 
 def read(fname):
@@ -48,20 +46,17 @@ for dep in info.get('depends', []):
         requires.append(get_require_version('%s_%s' % (prefix, dep)))
 requires.append(get_require_version('trytond'))
 
-tests_require = [get_require_version('proteus')]
+tests_require = [
+    get_require_version('proteus'),
+]
+
 series = '%s.%s' % (major_version, minor_version)
 if minor_version % 2:
     branch = 'default'
 else:
     branch = series
-dependency_links = [
-    ('hg+https://hg@bitbucket.org/zikzakmedia/'
-        'trytond-sale_shop@%(branch)s'
-        '#egg=trytonzz-sale_shop-%(series)s' % {
-            'branch': branch,
-            'series': series,
-            }),
-    ]
+
+dependency_links = []
 
 if minor_version % 2:
     # Add development index for testing with proteus
@@ -69,11 +64,12 @@ if minor_version % 2:
 
 setup(name='%s_%s' % (PREFIX, MODULE),
     version=version,
-    description='Tryton module to add wizard in template mails',
-    author='Zikzakmedia SL',
-    author_email='zikzak@zikzakmedia.com',
-    url='http://www.zikzakmedia.com',
-    download_url="https://bitbucket.org/zikzakmedia/trytond-" + MODULE,
+    description='',
+    long_description=read('README'),
+    author='NaN·tic',
+    author_email='info@nan-tic.com',
+    url='http://www.nan-tic.com/',
+    download_url="https://bitbucket.org/nantic/trytond-%s" % MODULE,
     package_dir={'trytond.modules.%s' % MODULE: '.'},
     packages=[
         'trytond.modules.%s' % MODULE,
@@ -81,7 +77,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     package_data={
         'trytond.modules.%s' % MODULE: (info.get('xml', [])
-            + ['tryton.cfg', 'view/*.xml', 'locale/*.po']),
+            + ['tryton.cfg', 'locale/*.po', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -90,9 +86,15 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         'Intended Audience :: Developers',
         'Intended Audience :: Financial and Insurance Industry',
         'Intended Audience :: Legal Industry',
-        'Intended Audience :: Manufacturing',
         'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Natural Language :: Bulgarian',
         'Natural Language :: Catalan',
+        'Natural Language :: Czech',
+        'Natural Language :: Dutch',
+        'Natural Language :: English',
+        'Natural Language :: French',
+        'Natural Language :: German',
+        'Natural Language :: Russian',
         'Natural Language :: Spanish',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',

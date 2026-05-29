@@ -2,6 +2,7 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from datetime import datetime
+import operator
 from trytond.model import ModelView, ModelSQL, DeactivableMixin, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
@@ -364,28 +365,28 @@ class SaleRuleCondition(ModelSQL, ModelView):
         return getattr(self, 'apply_%s' % self.condition)(value)
 
     def apply_equal(self, value):
-        return eval('%s == %s' % (value, self.quantity))
+        return operator.eq(value, self.quantity)
 
     def apply_not_equal(self, value):
-        return eval('%s != %s' % (value, self.quantity))
+        return operator.ne(value, self.quantity)
 
     def apply_greater_than(self, value):
-        return eval('%s > %s' % (value, self.quantity))
+        return operator.gt(value, self.quantity)
 
     def apply_greater_equal_than(self, value):
-        return eval('%s >= %s' % (value, self.quantity))
+        return operator.ge(value, self.quantity)
 
     def apply_less_than(self, value):
-        return eval('%s < %s' % (value, self.quantity))
+        return operator.lt(value, self.quantity)
 
     def apply_less_equal_than(self, value):
-        return eval('%s <= %s' % (value, self.quantity))
+        return operator.le(value, self.quantity)
 
     def apply_multiple(self, value):
-        return eval('%s %s %s == 0' % (value, '%', self.quantity))
+        return operator.mod(value, self.quantity) == 0
 
     def apply_not_multiple(self, value):
-        return eval('%s %s %s != 0' % (value, '%', self.quantity))
+        return operator.mod(value, self.quantity) != 0
 
 
 class SaleLine(metaclass=PoolMeta):

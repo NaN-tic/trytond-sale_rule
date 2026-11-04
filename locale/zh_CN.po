@@ -1,0 +1,313 @@
+#
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:sale.line,action:"
+msgid "Rule Action"
+msgstr "规则操作"
+
+msgctxt "field:sale.rule,actions:"
+msgid "Actions"
+msgstr "操作"
+
+msgctxt "field:sale.rule,active:"
+msgid "Active"
+msgstr "启用"
+
+msgctxt "field:sale.rule,category:"
+msgid "Party Category"
+msgstr "往来单位类别"
+
+msgctxt "field:sale.rule,conditions:"
+msgid "Conditions"
+msgstr "条件"
+
+msgctxt "field:sale.rule,coupon:"
+msgid "Coupon"
+msgstr "优惠券"
+
+msgctxt "field:sale.rule,from_date:"
+msgid "From Date"
+msgstr "从日期"
+
+msgctxt "field:sale.rule,max_coupon:"
+msgid "Max Coupon"
+msgstr "优惠券最大使用次数"
+
+msgctxt "field:sale.rule,max_party_coupon:"
+msgid "Max Coupon per Party"
+msgstr "每个往来单位的优惠券最大使用次数"
+
+msgctxt "field:sale.rule,name:"
+msgid "Description"
+msgstr "描述"
+
+msgctxt "field:sale.rule,quantifier:"
+msgid "Quantifier"
+msgstr "条件匹配方式"
+
+msgctxt "field:sale.rule,sequence:"
+msgid "Sequence"
+msgstr "序列"
+
+msgctxt "field:sale.rule,shop:"
+msgid "Shop"
+msgstr "门店"
+
+msgctxt "field:sale.rule,stop_further:"
+msgid "Stop further checks"
+msgstr "停止后续检查"
+
+msgctxt "field:sale.rule,to_date:"
+msgid "To Date"
+msgstr "到日期"
+
+msgctxt "field:sale.rule.action,action_type:"
+msgid "Action"
+msgstr "操作"
+
+msgctxt "field:sale.rule.action,comment:"
+msgid "Comment"
+msgstr "备注"
+
+msgctxt "field:sale.rule.action,product:"
+msgid "Product"
+msgstr "产品"
+
+msgctxt "field:sale.rule.action,quantity:"
+msgid "Quantity"
+msgstr "数量"
+
+msgctxt "field:sale.rule.action,rule:"
+msgid "Rule"
+msgstr "规则"
+
+msgctxt "field:sale.rule.action,sequence:"
+msgid "Sequence"
+msgstr "序列"
+
+msgctxt "field:sale.rule.condition,account_category:"
+msgid "Product Account Category"
+msgstr "产品会计类别"
+
+msgctxt "field:sale.rule.condition,condition:"
+msgid "Condition"
+msgstr "条件"
+
+msgctxt "field:sale.rule.condition,criteria:"
+msgid "Criteria"
+msgstr "条件"
+
+msgctxt "field:sale.rule.condition,product:"
+msgid "Product"
+msgstr "产品"
+
+msgctxt "field:sale.rule.condition,quantity:"
+msgid "Quantity"
+msgstr "数量"
+
+msgctxt "field:sale.rule.condition,rule:"
+msgid "Rule"
+msgstr "规则"
+
+msgctxt "field:sale.rule.condition,sequence:"
+msgid "Sequence"
+msgstr "序列"
+
+msgctxt "field:sale.rule.condition,stop_further:"
+msgid "Stop further checks"
+msgstr "停止后续检查"
+
+msgctxt "field:sale.sale,add_rules:"
+msgid "Add Rules"
+msgstr "添加规则"
+
+msgctxt "field:sale.sale,coupon:"
+msgid "Coupon"
+msgstr "优惠券"
+
+msgctxt "field:sale.shop,apply_rules:"
+msgid "Apply Rules"
+msgstr "应用规则"
+
+msgctxt "help:sale.rule,quantifier:"
+msgid ""
+"\"All\" requires that all conditions are true to apply this rule.\n"
+"\"Any\" applies this rule if any of the conditions is true."
+msgstr ""
+"“全部”要求所有条件均成立才应用此规则。\n"
+"“任意”表示只要任一条件成立就应用此规则。"
+
+msgctxt "help:sale.rule,stop_further:"
+msgid "Avoids that the rest of rules are checked if this rule is applicable."
+msgstr "若此规则适用，则不再检查其余规则。"
+
+msgctxt "help:sale.sale,add_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "从草稿转为报价时应用规则。"
+
+msgctxt "help:sale.shop,apply_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "从草稿转为报价时应用规则。"
+
+msgctxt "model:ir.action,name:act_sale_rule"
+msgid "Sale Rule"
+msgstr "销售规则"
+
+msgctxt "model:ir.model.button,string:apply_rules_button"
+msgid "Apply Rules"
+msgstr "应用规则"
+
+msgctxt "model:ir.ui.menu,name:menu_sale_rule"
+msgid "Sale Rule"
+msgstr "销售规则"
+
+msgctxt "model:sale.rule,name:"
+msgid "Sale Rule"
+msgstr "销售规则"
+
+msgctxt "model:sale.rule.action,name:"
+msgid "Sale Rule Action"
+msgstr "销售规则操作"
+
+msgctxt "model:sale.rule.condition,name:"
+msgid "Sale Rule Condition"
+msgstr "销售规则条件"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "All"
+msgstr "全部"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "Any"
+msgstr "任意"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Base"
+msgstr "基数折扣 %"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Sub Total"
+msgstr "小计折扣 %"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Fixed amount"
+msgstr "固定金额"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Get X Product Free"
+msgstr "免费赠送 X 件产品"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Stop Sale"
+msgstr "停止销售"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "equals"
+msgstr "等于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater or equal than"
+msgstr "大于或等于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater than"
+msgstr "大于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less or equal than"
+msgstr "小于或等于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less than"
+msgstr "小于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "multiple of"
+msgstr "是其倍数"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not equal to"
+msgstr "不等于"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not multiple of"
+msgstr "不是其倍数"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Product Account Category"
+msgstr "产品会计类别"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Tax Amount"
+msgstr "税额"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Amount"
+msgstr "总额"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Product Quantity"
+msgstr "产品总数量"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Products"
+msgstr "产品总数"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Untaxed Amount"
+msgstr "未税金额"
+
+msgctxt "view:sale.rule.action:"
+msgid "Actions"
+msgstr "操作"
+
+msgctxt "view:sale.rule.action:"
+msgid "Sale Rule"
+msgstr "销售规则"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Conditions"
+msgstr "条件"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Sale Rule"
+msgstr "销售规则"
+
+msgctxt "view:sale.rule:"
+msgid "Actions"
+msgstr "操作"
+
+msgctxt "view:sale.rule:"
+msgid "Conditions"
+msgstr "条件"
+
+msgctxt "view:sale.rule:"
+msgid "Time"
+msgstr "时间"
+
+msgctxt "view:sale.sale:"
+msgid "Apply Rules"
+msgstr "应用规则"
+
+#, python-format
+msgctxt "model:ir.message,text:sale_forbidden"
+msgid "You cannot make this sale because of %(message)s."
+msgstr "由于 %(message)s，无法进行此销售。"
+
+msgctxt "model:sale.rule.action,string:"
+msgid "Sale Rule Action"
+msgstr "销售规则操作"
+
+msgctxt "model:sale.rule.condition,string:"
+msgid "Sale Rule Condition"
+msgstr "销售规则条件"
+
+msgctxt "model:sale.rule,string:"
+msgid "Sale Rule"
+msgstr "销售规则"

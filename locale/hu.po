@@ -1,0 +1,314 @@
+#
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "field:sale.line,action:"
+msgid "Rule Action"
+msgstr "Szabály művelete"
+
+msgctxt "field:sale.rule,actions:"
+msgid "Actions"
+msgstr "Műveletek"
+
+msgctxt "field:sale.rule,active:"
+msgid "Active"
+msgstr "Aktív"
+
+msgctxt "field:sale.rule,category:"
+msgid "Party Category"
+msgstr "Partnerkategória"
+
+msgctxt "field:sale.rule,conditions:"
+msgid "Conditions"
+msgstr "Feltételek"
+
+msgctxt "field:sale.rule,coupon:"
+msgid "Coupon"
+msgstr "Kupon"
+
+msgctxt "field:sale.rule,from_date:"
+msgid "From Date"
+msgstr "Ettől"
+
+msgctxt "field:sale.rule,max_coupon:"
+msgid "Max Coupon"
+msgstr "Kupon maximális felhasználása"
+
+msgctxt "field:sale.rule,max_party_coupon:"
+msgid "Max Coupon per Party"
+msgstr "Kupon maximális felhasználása partnerenként"
+
+msgctxt "field:sale.rule,name:"
+msgid "Description"
+msgstr "Leírás"
+
+msgctxt "field:sale.rule,quantifier:"
+msgid "Quantifier"
+msgstr "Feltételek összekapcsolása"
+
+msgctxt "field:sale.rule,sequence:"
+msgid "Sequence"
+msgstr "Sorszám"
+
+msgctxt "field:sale.rule,shop:"
+msgid "Shop"
+msgstr "Üzlet"
+
+msgctxt "field:sale.rule,stop_further:"
+msgid "Stop further checks"
+msgstr "További ellenőrzések leállítása"
+
+msgctxt "field:sale.rule,to_date:"
+msgid "To Date"
+msgstr "Eddig"
+
+msgctxt "field:sale.rule.action,action_type:"
+msgid "Action"
+msgstr "Művelet"
+
+msgctxt "field:sale.rule.action,comment:"
+msgid "Comment"
+msgstr "Megjegyzés"
+
+msgctxt "field:sale.rule.action,product:"
+msgid "Product"
+msgstr "Termék"
+
+msgctxt "field:sale.rule.action,quantity:"
+msgid "Quantity"
+msgstr "Mennyiség"
+
+msgctxt "field:sale.rule.action,rule:"
+msgid "Rule"
+msgstr "Szabály"
+
+msgctxt "field:sale.rule.action,sequence:"
+msgid "Sequence"
+msgstr "Sorszám"
+
+msgctxt "field:sale.rule.condition,account_category:"
+msgid "Product Account Category"
+msgstr "Termék könyvelési kategóriája"
+
+msgctxt "field:sale.rule.condition,condition:"
+msgid "Condition"
+msgstr "Feltétel"
+
+msgctxt "field:sale.rule.condition,criteria:"
+msgid "Criteria"
+msgstr "Feltételek"
+
+msgctxt "field:sale.rule.condition,product:"
+msgid "Product"
+msgstr "Termék"
+
+msgctxt "field:sale.rule.condition,quantity:"
+msgid "Quantity"
+msgstr "Mennyiség"
+
+msgctxt "field:sale.rule.condition,rule:"
+msgid "Rule"
+msgstr "Szabály"
+
+msgctxt "field:sale.rule.condition,sequence:"
+msgid "Sequence"
+msgstr "Sorszám"
+
+msgctxt "field:sale.rule.condition,stop_further:"
+msgid "Stop further checks"
+msgstr "További ellenőrzések leállítása"
+
+msgctxt "field:sale.sale,add_rules:"
+msgid "Add Rules"
+msgstr "Szabályok hozzáadása"
+
+msgctxt "field:sale.sale,coupon:"
+msgid "Coupon"
+msgstr "Kupon"
+
+msgctxt "field:sale.shop,apply_rules:"
+msgid "Apply Rules"
+msgstr "Szabályok alkalmazása"
+
+msgctxt "help:sale.rule,quantifier:"
+msgid ""
+"\"All\" requires that all conditions are true to apply this rule.\n"
+"\"Any\" applies this rule if any of the conditions is true."
+msgstr ""
+"Az „Összes” beállításnál minden feltételnek teljesülnie kell a szabály alkalmazásához.\n"
+"A „Bármely” beállításnál elegendő, ha egy feltétel teljesül."
+
+msgctxt "help:sale.rule,stop_further:"
+msgid "Avoids that the rest of rules are checked if this rule is applicable."
+msgstr ""
+"Ha ez a szabály alkalmazható, megakadályozza a többi szabály ellenőrzését."
+
+msgctxt "help:sale.sale,add_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "Szabályok alkalmazása piszkozatból ajánlattá alakításkor."
+
+msgctxt "help:sale.shop,apply_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "Szabályok alkalmazása piszkozatból ajánlattá alakításkor."
+
+msgctxt "model:ir.action,name:act_sale_rule"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"
+
+msgctxt "model:ir.model.button,string:apply_rules_button"
+msgid "Apply Rules"
+msgstr "Szabályok alkalmazása"
+
+msgctxt "model:ir.ui.menu,name:menu_sale_rule"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"
+
+msgctxt "model:sale.rule,name:"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"
+
+msgctxt "model:sale.rule.action,name:"
+msgid "Sale Rule Action"
+msgstr "Értékesítési szabály művelete"
+
+msgctxt "model:sale.rule.condition,name:"
+msgid "Sale Rule Condition"
+msgstr "Értékesítési szabály feltétele"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "All"
+msgstr "összes"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "Any"
+msgstr "Bármely"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Base"
+msgstr "Kedvezmény % az alapból"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Sub Total"
+msgstr "Kedvezmény % a részösszegből"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Fixed amount"
+msgstr "Rögzített összeg"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Get X Product Free"
+msgstr "X darab termék ingyen"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Stop Sale"
+msgstr "Értékesítés leállítása"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "equals"
+msgstr "egyenlő"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater or equal than"
+msgstr "nagyobb vagy egyenlő"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater than"
+msgstr "nagyobb"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less or equal than"
+msgstr "kisebb vagy egyenlő"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less than"
+msgstr "kisebb"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "multiple of"
+msgstr "többszöröse"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not equal to"
+msgstr "nem egyenlő"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not multiple of"
+msgstr "nem többszöröse"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Product Account Category"
+msgstr "Termék könyvelési kategóriája"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Tax Amount"
+msgstr "Adóösszeg"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Amount"
+msgstr "Sorok összege"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Product Quantity"
+msgstr "Termékek összmennyisége"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Products"
+msgstr "Termékek száma"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Untaxed Amount"
+msgstr "Nettó összeg"
+
+msgctxt "view:sale.rule.action:"
+msgid "Actions"
+msgstr "Műveletek"
+
+msgctxt "view:sale.rule.action:"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Conditions"
+msgstr "Feltételek"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"
+
+msgctxt "view:sale.rule:"
+msgid "Actions"
+msgstr "Műveletek"
+
+msgctxt "view:sale.rule:"
+msgid "Conditions"
+msgstr "Feltételek"
+
+msgctxt "view:sale.rule:"
+msgid "Time"
+msgstr "Időpont"
+
+msgctxt "view:sale.sale:"
+msgid "Apply Rules"
+msgstr "Szabályok alkalmazása"
+
+#, python-format
+msgctxt "model:ir.message,text:sale_forbidden"
+msgid "You cannot make this sale because of %(message)s."
+msgstr "Ez az értékesítés nem hajtható végre, mert %(message)s."
+
+msgctxt "model:sale.rule.action,string:"
+msgid "Sale Rule Action"
+msgstr "Értékesítési szabály művelete"
+
+msgctxt "model:sale.rule.condition,string:"
+msgid "Sale Rule Condition"
+msgstr "Értékesítési szabály feltétele"
+
+msgctxt "model:sale.rule,string:"
+msgid "Sale Rule"
+msgstr "Értékesítési szabály"

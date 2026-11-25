@@ -1,0 +1,313 @@
+#
+msgid ""
+msgstr ""
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:sale.line,action:"
+msgid "Rule Action"
+msgstr "សកម្មភាពតាមវិធាន"
+
+msgctxt "field:sale.rule,actions:"
+msgid "Actions"
+msgstr "សកម្មភាព"
+
+msgctxt "field:sale.rule,active:"
+msgid "Active"
+msgstr "សកម្ម"
+
+msgctxt "field:sale.rule,category:"
+msgid "Party Category"
+msgstr "ប្រភេទដៃគូ"
+
+msgctxt "field:sale.rule,conditions:"
+msgid "Conditions"
+msgstr "លក្ខខណ្ឌ"
+
+msgctxt "field:sale.rule,coupon:"
+msgid "Coupon"
+msgstr "ប័ណ្ណបញ្ចុះតម្លៃ"
+
+msgctxt "field:sale.rule,from_date:"
+msgid "From Date"
+msgstr "ចាប់ពីកាលបរិច្ឆេទ"
+
+msgctxt "field:sale.rule,max_coupon:"
+msgid "Max Coupon"
+msgstr "ចំនួនប័ណ្ណបញ្ចុះតម្លៃអតិបរមា"
+
+msgctxt "field:sale.rule,max_party_coupon:"
+msgid "Max Coupon per Party"
+msgstr "ចំនួនប័ណ្ណបញ្ចុះតម្លៃអតិបរមាក្នុងមួយភាគី"
+
+msgctxt "field:sale.rule,name:"
+msgid "Description"
+msgstr "សេចក្តីពិពណ៌នា"
+
+msgctxt "field:sale.rule,quantifier:"
+msgid "Quantifier"
+msgstr "លក្ខខណ្ឌអនុវត្ត"
+
+msgctxt "field:sale.rule,sequence:"
+msgid "Sequence"
+msgstr "លំដាប់"
+
+msgctxt "field:sale.rule,shop:"
+msgid "Shop"
+msgstr "ហាង"
+
+msgctxt "field:sale.rule,stop_further:"
+msgid "Stop further checks"
+msgstr "បញ្ឈប់ការត្រួតពិនិត្យបន្ថែម"
+
+msgctxt "field:sale.rule,to_date:"
+msgid "To Date"
+msgstr "ដល់កាលបរិច្ឆេទ"
+
+msgctxt "field:sale.rule.action,action_type:"
+msgid "Action"
+msgstr "សកម្មភាព"
+
+msgctxt "field:sale.rule.action,comment:"
+msgid "Comment"
+msgstr "មតិយោបល់"
+
+msgctxt "field:sale.rule.action,product:"
+msgid "Product"
+msgstr "ផលិតផល"
+
+msgctxt "field:sale.rule.action,quantity:"
+msgid "Quantity"
+msgstr "បរិមាណ"
+
+msgctxt "field:sale.rule.action,rule:"
+msgid "Rule"
+msgstr "វិធាន"
+
+msgctxt "field:sale.rule.action,sequence:"
+msgid "Sequence"
+msgstr "លំដាប់"
+
+msgctxt "field:sale.rule.condition,account_category:"
+msgid "Product Account Category"
+msgstr "ប្រភេទគណនីផលិតផល"
+
+msgctxt "field:sale.rule.condition,condition:"
+msgid "Condition"
+msgstr "លក្ខខណ្ឌ"
+
+msgctxt "field:sale.rule.condition,criteria:"
+msgid "Criteria"
+msgstr "លក្ខណៈវិនិច្ឆ័យ"
+
+msgctxt "field:sale.rule.condition,product:"
+msgid "Product"
+msgstr "ផលិតផល"
+
+msgctxt "field:sale.rule.condition,quantity:"
+msgid "Quantity"
+msgstr "បរិមាណ"
+
+msgctxt "field:sale.rule.condition,rule:"
+msgid "Rule"
+msgstr "វិធាន"
+
+msgctxt "field:sale.rule.condition,sequence:"
+msgid "Sequence"
+msgstr "លំដាប់"
+
+msgctxt "field:sale.rule.condition,stop_further:"
+msgid "Stop further checks"
+msgstr "បញ្ឈប់ការត្រួតពិនិត្យបន្ថែម"
+
+msgctxt "field:sale.sale,add_rules:"
+msgid "Add Rules"
+msgstr "បន្ថែមវិធាន"
+
+msgctxt "field:sale.sale,coupon:"
+msgid "Coupon"
+msgstr "ប័ណ្ណបញ្ចុះតម្លៃ"
+
+msgctxt "field:sale.shop,apply_rules:"
+msgid "Apply Rules"
+msgstr "អនុវត្តច្បាប់"
+
+msgctxt "help:sale.rule,quantifier:"
+msgid ""
+"\"All\" requires that all conditions are true to apply this rule.\n"
+"\"Any\" applies this rule if any of the conditions is true."
+msgstr ""
+"«ទាំងអស់» តម្រូវឱ្យលក្ខខណ្ឌទាំងអស់ពិត មុនអនុវត្តវិធាននេះ។\n"
+"«ណាមួយ» អនុវត្តវិធាននេះ បើមានលក្ខខណ្ឌណាមួយពិត។"
+
+msgctxt "help:sale.rule,stop_further:"
+msgid "Avoids that the rest of rules are checked if this rule is applicable."
+msgstr "បញ្ឈប់ការត្រួតពិនិត្យវិធានផ្សេងទៀត បើវិធាននេះអាចអនុវត្តបាន។"
+
+msgctxt "help:sale.sale,add_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "អនុវត្តវិធានពេលប្ដូរពីសេចក្តីព្រាងទៅសម្រង់តម្លៃ។"
+
+msgctxt "help:sale.shop,apply_rules:"
+msgid "Apply rules when change draft to quotation."
+msgstr "អនុវត្តវិធានពេលប្ដូរពីសេចក្តីព្រាងទៅសម្រង់តម្លៃ។"
+
+msgctxt "model:ir.action,name:act_sale_rule"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
+
+msgctxt "model:ir.model.button,string:apply_rules_button"
+msgid "Apply Rules"
+msgstr "អនុវត្តច្បាប់"
+
+msgctxt "model:ir.ui.menu,name:menu_sale_rule"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
+
+msgctxt "model:sale.rule,name:"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
+
+msgctxt "model:sale.rule.action,name:"
+msgid "Sale Rule Action"
+msgstr "សកម្មភាពតាមវិធានការលក់"
+
+msgctxt "model:sale.rule.condition,name:"
+msgid "Sale Rule Condition"
+msgstr "លក្ខខណ្ឌនៃវិធានការលក់"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "All"
+msgstr "ទាំងអស់"
+
+msgctxt "selection:sale.rule,quantifier:"
+msgid "Any"
+msgstr "ណាមួយ"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Base"
+msgstr "បញ្ចុះតម្លៃជាភាគរយ (%) លើចំនួនមូលដ្ឋាន"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Discount % on Sub Total"
+msgstr "បញ្ចុះតម្លៃជាភាគរយ (%) លើសរុបរង"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Fixed amount"
+msgstr "ចំនួនទឹកប្រាក់ថេរ"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Get X Product Free"
+msgstr "ទទួលបានផលិតផល X ដោយឥតគិតថ្លៃ"
+
+msgctxt "selection:sale.rule.action,action_type:"
+msgid "Stop Sale"
+msgstr "បញ្ឈប់ការលក់"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "equals"
+msgstr "ស្មើនឹង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater or equal than"
+msgstr "ធំជាង ឬស្មើនឹង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "greater than"
+msgstr "ធំជាង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less or equal than"
+msgstr "តូចជាង ឬស្មើនឹង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "less than"
+msgstr "តូចជាង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "multiple of"
+msgstr "ជាពហុគុណនៃ"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not equal to"
+msgstr "មិនស្មើនឹង"
+
+msgctxt "selection:sale.rule.condition,condition:"
+msgid "not multiple of"
+msgstr "មិនមែនជាពហុគុណនៃ"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Product Account Category"
+msgstr "ប្រភេទគណនីផលិតផល"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Tax Amount"
+msgstr "ចំនួនទឹកប្រាក់ពន្ធ"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Amount"
+msgstr "ចំនួនទឹកប្រាក់សរុប"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Product Quantity"
+msgstr "បរិមាណផលិតផលសរុប"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Total Products"
+msgstr "ផលិតផលសរុប"
+
+msgctxt "selection:sale.rule.condition,criteria:"
+msgid "Untaxed Amount"
+msgstr "ចំនួនទឹកប្រាក់មិនរួមបញ្ចូលពន្ធ"
+
+msgctxt "view:sale.rule.action:"
+msgid "Actions"
+msgstr "សកម្មភាព"
+
+msgctxt "view:sale.rule.action:"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Conditions"
+msgstr "លក្ខខណ្ឌ"
+
+msgctxt "view:sale.rule.condition:"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
+
+msgctxt "view:sale.rule:"
+msgid "Actions"
+msgstr "សកម្មភាព"
+
+msgctxt "view:sale.rule:"
+msgid "Conditions"
+msgstr "លក្ខខណ្ឌ"
+
+msgctxt "view:sale.rule:"
+msgid "Time"
+msgstr "ពេលវេលា"
+
+msgctxt "view:sale.sale:"
+msgid "Apply Rules"
+msgstr "អនុវត្តច្បាប់"
+
+#, python-format
+msgctxt "model:ir.message,text:sale_forbidden"
+msgid "You cannot make this sale because of %(message)s."
+msgstr "មិនអាចបន្តការលក់នេះបានទេ ដោយសារ %(message)s។"
+
+msgctxt "model:sale.rule.action,string:"
+msgid "Sale Rule Action"
+msgstr "សកម្មភាពតាមវិធានការលក់"
+
+msgctxt "model:sale.rule.condition,string:"
+msgid "Sale Rule Condition"
+msgstr "លក្ខខណ្ឌនៃវិធានការលក់"
+
+msgctxt "model:sale.rule,string:"
+msgid "Sale Rule"
+msgstr "វិធានការលក់"
